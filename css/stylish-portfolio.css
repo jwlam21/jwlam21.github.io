@@ -169,7 +169,7 @@ hr.small {
     height: 100%;
     color: white;
     font-size: 18px;
-    background: url(../img/air.jpg) no-repeat center center scroll;
+    background: url(img/air.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
