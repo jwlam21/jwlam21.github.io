@@ -281,7 +281,7 @@ textblockright {
 
 }
 .services p {
-    text-align: left;
+    text-align: left !important;
 }
 
 a {
