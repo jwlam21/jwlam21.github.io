@@ -280,6 +280,9 @@ textblockright {
     text-align: center;
 
 }
+.services p {
+    text-align: left;
+}
 
 a {
     color: darkslateblue;
