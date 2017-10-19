@@ -169,7 +169,7 @@ hr.small {
     height: 100%;
     color: white;
     font-size: 18px;
-    background: url(https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/air.JPG) no-repeat center center scroll;
+    background: url(https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/gd/lowpoly_black.png) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -273,11 +273,13 @@ textblockright {
     padding-left: 10px;
     padding-right: 5px;
     padding-bottom: 10px;
+    border-radius: 4px;
 
 }
 
 .service-item h4 {
     text-align: center;
+    
 
 }
 .services p {
@@ -286,7 +288,6 @@ textblockright {
 
 a {
     color: darkslateblue;
-
 }
 
 
