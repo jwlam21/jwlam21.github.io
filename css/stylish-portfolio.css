@@ -259,7 +259,7 @@ textblockright {
 
 .services {
     color: white;
-    background-color:steelblue !important;
+    background-color: lightslategray !important;
 
 
     padding: 50px 0;
@@ -318,6 +318,7 @@ a {
 
 .project-item {
     margin-bottom: 30px;
+    
 }
 
 .img-portfolio {
