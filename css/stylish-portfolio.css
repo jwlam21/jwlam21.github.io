@@ -48,8 +48,7 @@ body {
     border-radius: 0;
     background-color: rgba(0, 0, 0, .4);
     margin-bottom: 10px;
-    align-items: center;
-    color: white !important;
+ 
 }
 
 .btn-dark:hover,
@@ -321,7 +320,6 @@ textblockright {
 
 .service-item h4 {
     text-align: center;
-   
    /* margin-top: 50px;
     */
 
@@ -332,12 +330,14 @@ textblockright {
 }
 
 a {
-    color: darkslateblue;
+    color: dodgerblue;
 }
 
 card-text {
     color: black !important;
 }
+
+
 
 
 
