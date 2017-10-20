@@ -290,6 +290,7 @@ textblockright {
 .card h-100 {
     display: block;
     align-items: center;
+    color: black;
 
 }
 
@@ -327,6 +328,7 @@ textblockright {
 }
 .services p {
     text-align: left !important;
+    color: black;
 }
 
 a {
