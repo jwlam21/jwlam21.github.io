@@ -42,6 +42,15 @@ body {
     background-color: rgba(0, 0, 0, .4);
     margin-bottom: 30px;
 }
+.btn-dark2 {
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, .4);
+    margin-bottom: 10px;
+    align-items: center;
+    color: white !important;
+}
 
 .btn-dark:hover,
 .btn-dark:focus,
@@ -259,7 +268,7 @@ textblockright {
 
 .services {
     color: white;
-    background-color: lightslategray !important;
+    background-color: steelblue !important;
 
 
     padding: 50px 0;
@@ -269,19 +278,51 @@ textblockright {
 
 .service-item {
     margin-bottom: 30px;
-    background-color: lightsteelblue;
+    background-color: steelblue;
     padding-left: 10px;
     padding-right: 5px;
     padding-bottom: 10px;
     border-radius: 4px;
-  
     display: block;
 
 }
 
+.card h-100 {
+    display: block;
+    align-items: center;
+
+}
+
+.card-body {
+    color: black;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.pagination {
+  margin-bottom: 30px;
+}
+
+/*i.fa-cloud {
+    content:"";
+    background-image:url(https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/spring.jpg?raw=true);
+    width: 150px; 
+    height: 150px; 
+    display: inline-block;
+    background-position:center;
+    margin-top: 10px;
+    border-radius: 50%;
+    background-size:cover;
+} */ 
+
+
 .service-item h4 {
     text-align: center;
-    
+   
+   /* margin-top: 50px;
+    */
 
 }
 .services p {
@@ -291,6 +332,11 @@ textblockright {
 a {
     color: darkslateblue;
 }
+
+card-text {
+    color: black !important;
+}
+
 
 
 /* Callout */
