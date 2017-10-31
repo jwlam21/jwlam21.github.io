@@ -64,6 +64,14 @@ body {
     margin-bottom: 10px;
  
 }
+.btn-dark3 {
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, .4);
+    margin-bottom: 0px;
+    margin-top: 25px;
+}
 
 .btn-dark:hover,
 .btn-dark:focus,
@@ -398,6 +406,9 @@ card-text {
 }
 .graphic-item {
     padding-top: 0px;  
+}
+.graphic-item .btn-dark {
+    padding-top: 30px;
 }
 
 
