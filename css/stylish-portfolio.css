@@ -221,6 +221,14 @@ hr.small {
      font-family: 'Muli', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.about-image {
+    float: left;
+    margin-right: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+
 imgblockleft {
     display: inline-block;
     float: left;
@@ -267,10 +275,12 @@ textblockright {
 .about-content{
     padding-top: 70px;
     margin-top:0px;
-    margin-left: 15cm;
+   /* margin-left: 15cm; */
+   margin-left: 0cm;
     margin-bottom: 70px;
     align-content: center;
     padding-bottom: 0px;
+    float: center !important; 
      font-family: 'Muli', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .about-content h4{
@@ -289,12 +299,16 @@ textblockright {
 
 .services {
     color: white;
-    background-color: steelblue !important;
+    background-color: white !important;
 
 
     padding: 50px 0;
 
     
+}
+
+.services h2 {
+    color: black !important;
 }
 
 .service-item {
@@ -317,6 +331,9 @@ textblockright {
 
 .card-body {
     color: black;
+    display: inline-block;
+    padding-bottom: 30px;
+
 }
 
 .portfolio-item {
@@ -361,6 +378,20 @@ card-text {
 
 
 
+
+/*videos */
+.services container {
+  background: #e3e3e3;
+  margin-bottom: 20px;
+  padding-bottom: 50px;
+}
+services h1, h4 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+services h1 i {
+  color: pink;
+}
 
 
 /* Callout */
