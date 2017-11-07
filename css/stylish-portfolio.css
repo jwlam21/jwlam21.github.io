@@ -430,6 +430,37 @@ services h1 i {
     opacity: .8;
 }
 
+/* 3d */
+.3dim {
+    padding: 50px 0;
+}
+
+.3d-item {
+    padding-top: 0px;
+    position: relative;
+
+}
+.3dim img {
+    display: block;
+}
+.image-hover {
+    position: absolute;
+    z-index: -1;
+    display: none;
+    background: url("https://github.com/jwlam21/jwlam21.github.io/blob/master/img/HarleyQuinnModel.png?raw=true") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+.3d-item2 {
+    padding-top: 50px 50px;
+}
+.img-portfolio2 {
+    margin: 0 auto;
+}
+
+.img-portfolio2:hover image-hover{
+    display: block;
+    
+}
+
 
 /* Graphics */
 .graphics {
