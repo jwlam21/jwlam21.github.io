@@ -95,9 +95,9 @@
             <div class="container center">  
             <div class="row">
                     <div class="about-wrapper">  
-
+       
                   <div class="about-image">
-                        <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-md-6 col-sm-6 col-xs-4">
                             <div class="circular--portrait" style="float:center;">
                                 <img src="img\Profile2.jpg" alt="About Photo" />
                             </div>
@@ -105,8 +105,8 @@
 
                      </div>
 
-                    
-                        <div class="col-md-12 col-sm-6 col-xs-6">
+               <div class="box">
+                        <div class="col-md-12 col-sm-6 col-xs-4">
                      
                             <div class="about-content text-left" style="float:center;">
                                 <h4>Hi, I’m Joanna Lam, Artist from San Diego.</h4>
@@ -117,8 +117,7 @@
                             </div>
                      
                          </div>
-
-                         
+             </div>            
                     </div> 
                 </div>	
             </div>     
@@ -152,7 +151,9 @@
 
       <div class="row">
      
-
+<!-- <div style="display: none;" id="hiddenText">This is hidden</div>
+<a href="#" onclick="document.getElementById('hiddenText').style.display="block"; return false;">Click here to show hidden text</a>
+-->
 
 
 <div class="container">
@@ -166,12 +167,13 @@
     <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/197072731" ></iframe>
   
 </div>
-  <div class="card-body">
+  <div class="card-body" style="display:none;" id="hiddenText">
           <p>Kids are able to build their own obstacles with blocks and maneuver through their own creations by Bluetooth controlled Arduino vehicles. 
             This toy is free-form and modular, pairing nostalgia with contemporary hands-on gameplay.</p>
             <div>
                   <a href="pdfs/147A Proposal.pdf" target="_blank" class="btn btn-dark2">Learn More</a>
             </div>
+            <a href="#" onclick="document.getElementById('hiddenText').style.display='block'; return false;">Click here to show hidden text</a>
       </div>
     </div>
 

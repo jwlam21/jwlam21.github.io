@@ -273,14 +273,18 @@ textblockright {
 /*For About Us Section */
 
 .about-content{
-    padding-top: 70px;
-    margin-top:0px;
+    padding-top: 30px;
+    margin-top:0px; 
    /* margin-left: 15cm; */
-   margin-left: 0cm;
+    margin-left: 0cm;
     margin-bottom: 70px;
     align-content: center;
     padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 30px;
+    margin-right: 30px;
     float: center !important; 
+    display: block;
      font-family: 'Muli', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .about-content h4{
@@ -288,11 +292,21 @@ textblockright {
      font-family: 'Muli', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .about-content a{
-    margin-top:40px;
+    margin-top:30px;
     margin-bottom: 40px;
     align-items: center;
+} 
+.about-content p {
+    display: block;
 }
 
+.box {
+    display: block;
+    background: white;
+    margin-right: 10px;
+    padding-right: 10px;
+
+} 
 
 
 /* Services */
