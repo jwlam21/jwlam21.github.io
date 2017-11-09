@@ -21,6 +21,101 @@
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
 
+    <!-- read more drop down hidden -->
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
+	<script>
+		// DOM Ready
+/*		$(function() {
+		
+			var $el, $ps, $up, totalHeight;
+			
+			$(".sidebar-box .button").click(function() {
+			
+						
+				totalHeight = 0
+			
+				$el = $(this);
+				$p  = $el.parent();
+				$up = $p.parent();
+				$ps = $up.find("p:not('.read-more')");
+				
+				// measure how tall inside should be by adding together heights of all inside paragraphs (except read-more paragraph)
+				$ps.each(function() {
+					totalHeight += $(this).outerHeight();
+					// FAIL totalHeight += $(this).css("margin-bottom");
+				});
+							
+				$up
+					.css({
+						// Set height to prevent instant jumpdown when max height is removed
+						"height": $up.height(),
+						"max-height": 9999
+					})
+					.animate({
+						"height": totalHeight
+					});
+				
+				// fade out read-more
+				$p.fadeOut();
+				
+				// prevent jump-down
+				return false;
+					
+			}); */
+
+
+
+
+ /*     $(function(){ /* to make sure the script runs after page load */
+
+/*    $('a.read_more').click(function(event){ /* find all a.read_more elements and bind the following code to them */
+
+  /*      event.preventDefault(); /* prevent the a from changing the url */
+  /*      $(this).parents('.item').find('.more_text').show(); /* show the .more_text span */
+
+/*    }); */
+
+
+
+    $(function(){ /* to make sure the script runs after page load */
+
+	$('.item').each(function(event){ /* select all divs with the item class */
+	
+		var max_length = 210; /* set the max content length before a read more link will be added */
+		
+		if($(this).html().length > max_length){ /* check for content length */
+			
+			var short_content 	= $(this).html().substr(0,max_length); /* split the content in two parts */
+			var long_content	= $(this).html().substr(max_length);
+			
+			$(this).html(short_content+
+						 '<a href="#" class="read_more"><br/>Read More</a>'+
+						 '<span class="more_text" style="display:none;">'+long_content+'</span>'); /* Alter the html to allow the read more functionality */
+						 
+			$(this).find('a.read_more').click(function(event){ /* find the a.read_more element within the new html and bind the following code to it */
+ 
+				event.preventDefault(); /* prevent the a from changing the url */
+				$(this).hide(); /* hide the read more button */
+				$(this).parents('.item').find('.more_text').show(); /* show the .more_text span */
+        
+		 
+			});
+			
+		}
+			//$('.item').fadeOut();
+
+    
+	});
+ 
+ 
+
+
+
+
+		
+		});
+	</script>
+
   </head>
 
   <body>
@@ -167,17 +262,30 @@
     <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/197072731" ></iframe>
   
 </div>
-  <div class="card-body" style="display:none;" id="hiddenText">
+  <div class="card-body" >
+    <div class="read-more">
+    <div class="item">
+      <div id="fade-content">
+
           <p>Kids are able to build their own obstacles with blocks and maneuver through their own creations by Bluetooth controlled Arduino vehicles. 
             This toy is free-form and modular, pairing nostalgia with contemporary hands-on gameplay.</p>
+        <!--   <p class="read-more"> 
+             <a href="#" class="button">Read More</a>
+                <span class="more_text">
+                 This is the extra text, that will be shown after pressing the link above.
+             </span> 
+             
+            </p> -->
+      </div>
             <div>
                   <a href="pdfs/147A Proposal.pdf" target="_blank" class="btn btn-dark2">Learn More</a>
+            </div> 
             </div>
-            <a href="#" onclick="document.getElementById('hiddenText').style.display='block'; return false;">Click here to show hidden text</a>
-      </div>
+            </div>
+       
     </div>
 
-
+</div>
     <div class="col-sm-6">
  
 <!-- vitabot -->
@@ -186,6 +294,7 @@
     <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/210512119"></iframe>
     </div>
     <div class="card-body">
+      <div class="item">
      <p>
             The Vitabot maintains and attends for the user. It is specially crafted to ensure that the users receive maximum amount of care, servitude, protection, and fun.
                      The Bot can be used in various ways and can be utilized by everyone, specifically targeting children. With the Vitabot, kids will be able to carry first aid tools in a portable and fun container. Click below to
@@ -195,7 +304,7 @@
                    <a href="pdfs/vitabot.pdf" target="_blank" class="btn btn-dark2">Read More</a>
                 </div>
                 </div>
-          
+          </div>
     </div>
 
     <!--nightmare-->
@@ -209,12 +318,14 @@
   
 </div>
   <div class="card-body">
+    <div class="item">
           <p>
             <i>Henry Fuseli's The Nightmare</i> is a video game proposal based off Henry Fuseli's painting, <i>The Nightmare</i>. This project features a young girl who suffers from sleep paralysis and nightmares. As a player, you, a college student and barista, suffer from sleep paralysis and experience the same nightmare every night. In the nightmare, you are being chased by demons and must surmount multiple obstacles and puzzles throughout the maze in order to escape.
                   This game provides many plot twists and challenges in gameplay. <i>Henry Fuseli's The Nightmare</i> dives into the research and understanding of sleep paralysis and the conditions patients undergo when they experience it.
             </p> 
             <div>
                   <a href="pdfs/NIGHTMARE.pdf" target="_blank" class="btn btn-dark2" >Read the Proposal</a>
+                </div>
                 </div>
       </div>
     </div>
@@ -229,10 +340,12 @@
   
 </div>
   <div class="card-body">
+    <div class="item">
           <p>Made with Unity, this abstract game focuses on challenging normal video game environments through the jaws of an alligator. This game incorporates the landscape as the game and challenges the limitations of player movement and assessment of the land. The space is itself a time fold in which overlapping identical areas can be changed by unique individual factors, of which spark separate chain reactions that evolve the entire space. Inspired by China Mieville's novel <i>The City and The City</i>, this game forces players to reconsider virtual space and question the boundaries in video games. Play the game or read more <a target="_blank" href="pdfs/Island.pdf">here</a>.</p>
           <div>
                   <a href="videogame/TheIslandandTheIsland.exe" target="_blank" class="btn btn-dark2">Play the Game</a>
             </div>
+      </div>
       </div>
     </div>
 
