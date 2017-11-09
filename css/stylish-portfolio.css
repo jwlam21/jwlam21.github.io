@@ -350,7 +350,7 @@ textblockright {
    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
    
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  /* text-shadow: rgba(0,0,0,.4) 0 1px 0; */
    color: white;
    font-size: 14px;
    font-family: 'Muli', Georgia, serif;
@@ -402,7 +402,7 @@ div#fade-container{
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
 			border-radius: 9pt 9pt 0 0;
-			color: #8c8c8c;
+			/*color: #8c8c8c; */
 			display: inline-block;
 			max-width: 100%;
 			overflow: hidden;
