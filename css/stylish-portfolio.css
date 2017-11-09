@@ -555,6 +555,12 @@ services h1 i {
     
 }
 
+.projects h4 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: darkgray;
+}
+
 .img-portfolio {
     margin: 0 auto;
 }
