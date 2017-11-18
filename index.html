@@ -21,67 +21,19 @@
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
 
+
     <!-- read more drop down hidden -->
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
 	<script>
-		// DOM Ready
-/*		$(function() {
-		
-			var $el, $ps, $up, totalHeight;
-			
-			$(".sidebar-box .button").click(function() {
-			
-						
-				totalHeight = 0
-			
-				$el = $(this);
-				$p  = $el.parent();
-				$up = $p.parent();
-				$ps = $up.find("p:not('.read-more')");
-				
-				// measure how tall inside should be by adding together heights of all inside paragraphs (except read-more paragraph)
-				$ps.each(function() {
-					totalHeight += $(this).outerHeight();
-					// FAIL totalHeight += $(this).css("margin-bottom");
-				});
-							
-				$up
-					.css({
-						// Set height to prevent instant jumpdown when max height is removed
-						"height": $up.height(),
-						"max-height": 9999
-					})
-					.animate({
-						"height": totalHeight
-					});
-				
-				// fade out read-more
-				$p.fadeOut();
-				
-				// prevent jump-down
-				return false;
-					
-			}); */
-
-
-
-
- /*     $(function(){ /* to make sure the script runs after page load */
-
-/*    $('a.read_more').click(function(event){ /* find all a.read_more elements and bind the following code to them */
-
-  /*      event.preventDefault(); /* prevent the a from changing the url */
-  /*      $(this).parents('.item').find('.more_text').show(); /* show the .more_text span */
-
-/*    }); */
-
-
+	
+   //expand text 
 
     $(function(){ /* to make sure the script runs after page load */
 
-	$('.item').each(function(event){ /* select all divs with the item class */
 	
-		var max_length = 210; /* set the max content length before a read more link will be added */
+  $('.item').each(function(event){ /* select all divs with the item class */
+	
+		var max_length = 211; /* set the max content length before a read more link will be added */
 		
 		if($(this).html().length > max_length){ /* check for content length */
 			
@@ -97,7 +49,8 @@
 				event.preventDefault(); /* prevent the a from changing the url */
 				$(this).hide(); /* hide the read more button */
 				$(this).parents('.item').find('.more_text').show(); /* show the .more_text span */
-        
+
+
 		 
 			});
 			
@@ -107,19 +60,59 @@
     
 	});
  
- 
-
-
-
 
 		
 		});
 	</script>
 
+<!--scroll bar hide -->
+
+  <!--// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('nav').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('nav').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('nav').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+} -->
+
+
   </head>
 
   <body>
-    <!-- Navigation -->
+      <!-- this element will be visible at xs device width -->
+<!-- <div class="navbar-static-top visible-xs-block">
+
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
       <i class="fa fa-bars"></i>
     </a>
@@ -140,23 +133,23 @@
           <a class="js-scroll-trigger" href="#about">About</a>
         </li>
       
-        <!-- services -->
+      
         <li>
           <a class="js-scroll-trigger" href="#services">Projects</a>
         </li>
-        <!-- 3d modeling -->
+   
          <li>
           <a class="js-scroll-trigger" href="#dim">3D Modeling</a>
         </li>
-        <!-- gd -->
+  
           <li>
           <a class="js-scroll-trigger" href="#graphics">Graphic Design</a>
         </li>
-        <!--portfolio-->
+    
         <li>
           <a class="js-scroll-trigger" href="#projects">Photography</a>
         </li>
-         <!-- 2d art -->
+  
          <li>
           <a class="js-scroll-trigger" href="#2dim">2D Artwork</a>
         </li>
@@ -168,8 +161,68 @@
       </ul>
     </nav>
 
+
+</div> -->
+
+<div class="navbar-default hidden-xs">
+  <!-- this element will be visible for all device widths except xs -->
+
+ <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#">Joanna Lam</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Projects</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#dim">3D Modeling</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#graphics">Graphic Design</a>
+            </li>
+
+            <div class="dropdown">
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#projects">Photography</a>
+                                    
+                                          <div class="dropdown-content">
+                             
+                                  <a href="http://joannawlam.com/grid/grid.html" target="_blank">Reptiles</a>
+                                 <a href="http://joannawlam.com/grid/grid_mammals.html"target="_blank">Mammals</a>
+                                  <a href="http://joannawlam.com/grid/grid_floral.html"target="_blank">Floral</a>
+                          
+                          </div>
+                       
+            </li>
+               </div>
+            
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+</div>
+
+
+
+
+
     <!-- Header -->
-    <header class="header" id="top">
+    <header class="header" "nav-down" id="top">
       <div class="text-vertical-center">
              <div class="div-menu">
                             <header class="cd-header">
@@ -324,9 +377,10 @@
   <div class="card-body">
     <div class="item">
           <p>
-            <i>Henry Fuseli's The Nightmare</i> is a video game proposal based off Henry Fuseli's painting, <i>The Nightmare</i>. This project features a young girl who suffers from sleep paralysis and nightmares. As a player, you, a college student and barista, suffer from sleep paralysis and experience the same nightmare every night. In the nightmare, you are being chased by demons and must surmount multiple obstacles and puzzles throughout the maze in order to escape.
+            <i>Henry Fuseli's The Nightmare</i> is a video game proposal based off Henry Fuseli's painting, <a href="https://en.wikipedia.org/wiki/The_Nightmare"target="_blank">The Nightmare</a>. This project features a young girl who suffers from sleep paralysis and nightmares. As a player, you, a college student and barista, suffer from sleep paralysis and experience the same nightmare every night. In the nightmare, you are being chased by demons and must surmount multiple obstacles and puzzles throughout the maze in order to escape.
                   This game provides many plot twists and challenges in gameplay. <i>Henry Fuseli's The Nightmare</i> dives into the research and understanding of sleep paralysis and the conditions patients undergo when they experience it.
             </p> 
+         
             <div>
                   <a href="pdfs/NIGHTMARE.pdf" target="_blank" class="btn btn-dark2" >Read the Proposal</a>
                 </div>
