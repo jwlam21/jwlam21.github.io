@@ -808,6 +808,7 @@ services h1 i {
 }
 .graphic-item {
     padding-top: 0px;  
+    position: relative;
 }
 .graphic-item .btn-dark {
     padding-top: 30px;
@@ -818,7 +819,11 @@ services h1 i {
 .graphics h4 {
     color: darkgray;
     font-size: 18px;
+     margin-top: 10px;
+    margin-bottom: 0px;
 }
+
+
 
 
 /* Call to Action */
