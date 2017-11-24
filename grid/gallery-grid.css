@@ -89,9 +89,9 @@ user-select: none !important;
 -o-user-select: none !important;
 user-select: none !important; 
 
-  -webkit-user-drag: none;
+  /*-webkit-user-drag: none;
       user-drag: none;
-      -webkit-touch-callout: none;
+      -webkit-touch-callout: none; */
 }
 
 .baguetteBox-button {
@@ -322,4 +322,8 @@ hr.small {
     background-attachment: fixed;
     background-repeat: no-repeat;
 } 
+
+
+
+
 

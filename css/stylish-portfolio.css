@@ -725,7 +725,19 @@ services h1 i {
        background-attachment: fixed;
     background-repeat: no-repeat;
 }
-
+.callout2 {
+    display: table;
+    width: 100%;
+    height: 450px;
+    color: #fff;
+    background: url(https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/green%20blue%20low%20poly%20background.png?raw=true) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+       background-attachment: fixed;
+    background-repeat: no-repeat;
+}
 
 /* Portfolio */
 
