@@ -353,7 +353,7 @@ hr.small {
     padding-top: 90px;
     position: relative;
     overflow: hidden;
-    padding-bottom: 70px;
+    padding-bottom: 70px !important;
      font-family: 'Muli', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
