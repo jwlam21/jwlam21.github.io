@@ -1,4 +1,4 @@
-     <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -10,31 +10,20 @@
 
     <title>Joanna Lam</title>
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
+    <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
-       <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet">
-       <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet">
 
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
 
-       <!--baguettebox -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css"> 
-
-
-
-       <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template -->
-    <link href="css/grayscale.min.css" rel="stylesheet">
 
     <!-- read more drop down hidden -->
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
-
 	<script>
 	
    //expand text 
@@ -42,106 +31,182 @@
     $(function(){ /* to make sure the script runs after page load */
 
 	
-           $('.item').each(function(event)
-            { /* select all divs with the item class */
+  $('.item').each(function(event){ /* select all divs with the item class */
 	
-		                var max_length = 1760; /* set the max content length before a read more link will be added */
+		var max_length = 211; /* set the max content length before a read more link will be added */
 		
-		                if($(this).html().length > max_length)
-                    { /* check for content length */
+		if($(this).html().length > max_length){ /* check for content length */
 			
-                          var short_content 	= $(this).html().substr(0,max_length); /* split the content in two parts */
-                          var long_content	= $(this).html().substr(max_length);
-                          
-                          $(this).html(short_content+
-                                '<a href="#" class="read_more"><br/>Read More</a>'+
-                                '<span class="more_text" style="display:none;">'+long_content+'</span>'); /* Alter the html to allow the read more functionality */
-                                
-                          $(this).find('a.read_more').click(function(event)
-                          { /* find the a.read_more element within the new html and bind the following code to it */
+			var short_content 	= $(this).html().substr(0,max_length); /* split the content in two parts */
+			var long_content	= $(this).html().substr(max_length);
+			
+			$(this).html(short_content+
+						 '<a href="#" class="read_more"><br/>Read More</a>'+
+						 '<span class="more_text" style="display:none;">'+long_content+'</span>'); /* Alter the html to allow the read more functionality */
+						 
+			$(this).find('a.read_more').click(function(event){ /* find the a.read_more element within the new html and bind the following code to it */
  
-                                  event.preventDefault(); /* prevent the a from changing the url */
-                                  $(this).hide(); /* hide the read more button */
-                                  $(this).parents('.item').find('.more_text').show(); /* show the .more_text span */
+				event.preventDefault(); /* prevent the a from changing the url */
+				$(this).hide(); /* hide the read more button */
+				$(this).parents('.item').find('.more_text').show(); /* show the .more_text span */
 
 
 		 
-		                  	  });
+			});
 			
-		                }
+		}
 			//$('.item').fadeOut();
 
     
-    	        });
+	});
  
-//append here
 
-// select button, and select element to toggle visibility
-$("#but01").click( function () {
-      $("#reptiles").toggle();
-});
-$("#but02").click( function () {
-      $("#mammals").toggle();
-});
 		
 		});
-
-function toggler(divId) {
-    $("#" + divId).toggle();
-}
-
 	</script>
+
+<!--scroll bar hide -->
+
+  <!--// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('nav').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('nav').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('nav').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+} -->
+
 
   </head>
 
-  <body id="page-top">
+  <body>
+      <!-- this element will be visible at xs device width -->
+<!-- <div class="navbar-static-top visible-xs-block">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
+      <i class="fa fa-bars"></i>
+    </a>
 
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
+          <i class="fa fa-times"></i>
+        </a>
+        <li class="sidebar-brand">
+          <a class="js-scroll-trigger" href="#top">Joanna Lam</a>
+        </li>
+        <li>
+          <a class="js-scroll-trigger" href="#top">Home</a>
+        </li>
+
+           <li>
+          <a class="js-scroll-trigger" href="#about">About</a>
+        </li>
+      
+      
+        <li>
+          <a class="js-scroll-trigger" href="#services">Projects</a>
+        </li>
+   
+         <li>
+          <a class="js-scroll-trigger" href="#dim">3D Modeling</a>
+        </li>
+  
+          <li>
+          <a class="js-scroll-trigger" href="#graphics">Graphic Design</a>
+        </li>
+    
+        <li>
+          <a class="js-scroll-trigger" href="#projects">Photography</a>
+        </li>
+  
+         <li>
+          <a class="js-scroll-trigger" href="#2dim">2D Artwork</a>
+        </li>
+    
+       
+        <li>
+          <a class="js-scroll-trigger" href="#contact" onclick=$( "#menu-close").click();>Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+
+</div>   -->
+ 
+<!-- <div class="navbar-default hidden-xs"> -->
+  <!-- this element will be visible for all device widths except xs -->
+
+ <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Joanna Lam</a>
+        <a class="navbar-brand js-scroll-trigger" href="#">Joanna Lam</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+          <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Projects</a>
+              <a class="nav-link js-scroll-trigger" href="#services">Projects</a>
             </li>
+          
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#dim">3D Modeling</a>
             </li>
+          
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#graphic">Graphics</a>
+              <a class="nav-link js-scroll-trigger" href="#graphics">Graphic Design</a>
             </li>
-             <div class="dropdown">
+
+            <div class="dropdown">
               <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#photos">Photography</a>
+              <a class="nav-link js-scroll-trigger" href="#projects">Photography</a>
                                     
                                           <div class="dropdown-content">
                              
-                             <!--     <a href="http://joannawlam.com/grid/grid.html" target="_blank">Reptiles</a>
+                                  <a href="http://joannawlam.com/grid/grid.html" target="_blank">Reptiles</a>
                                  <a href="http://joannawlam.com/grid/grid_mammals.html"target="_blank">Mammals</a>
-                                  <a href="http://joannawlam.com/grid/grid_floral.html"target="_blank">Floral</a> -->
-                                <!--  <a href="#photos"> 
-                                      <script type="text/javascript">
-                                     
-                                                $(window).on('load',function(){
-                                                    $('#portfolio-modal-1').modal('show');
-                                                });
-
-                                          //$('#portfolio-modal-7').modal('show');
-                                          </script> Reptiles</a> -->
+                                  <a href="http://joannawlam.com/grid/grid_floral.html"target="_blank">Floral</a>
                           
-                          </div> 
-                            </li>
+                          </div>
+                       
+            </li>
                </div>
-
+            
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
             </li>
@@ -150,97 +215,35 @@ function toggler(divId) {
       </div>
     </nav>
 
-    <!-- Intro Header -->
-    <header class="masthead">
-      <div class="intro-body">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
+</div>
 
-              <div class="div-menu">
+
+
+
+
+    <!-- Header -->
+    <header class="header" "nav-down" id="top">
+      <div class="text-vertical-center">
+             <div class="div-menu">
                             <header class="cd-header">
                                 <div id="cd-logo">
-                                    <a href="index.html"><img src="img\logo.png" width= "10%" height="3%" alt="white logo.png"></a>
+                                    <a href="index.html"><img src="img\white logo.png" width= "5%%" height="2%" alt="white logo.png"></a>
                                 </div> 
                                 <a class="cd-menu-trigger" href="#main-nav"><span></span></a>
                             </header>
                         </div>
-              <h1 class="brand-heading">Joanna Lam</h1>
-              <p class="intro-text">3D Artist and Future Animator</p>
-                <h4>I'm passionate about combining the arts and technology</h4>
-              <a href="#about" class="btn btn-circle js-scroll-trigger">
-                <i class="fa fa-angle-double-down animated"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+
+        <h1>Joanna Lam</h1>
+        <h3>3D Artist and Future Animator</h3>
+        <h4>I'm passionate about combining the arts and technology.</h4>
+        <br>
+        <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger">Find Out More</a>
       </div>
     </header>
 
-    <!-- About Section -->
-   <!-- <section id="about" class="content-section text-center">
-      <div class="container center">
-        <div class="row">
-          <div class="about-wrapper">
-            <div class="about-image">
+    <!-- About -->
 
-          <div class="col-lg-12 col-md-6 col-sm-6 col-xs-4 mx-auto">
-            <div class="circular--portrait" style="float:right;">
-                <img src="img\Profile2.jpg" alt="About Photo" />
-            </div>
-          </div>
-       </div>
-
-       <div class="box">
-         <div class="col-lg-12 col-md-12 col-sm-6 col-xs-4">
-         <div class="about-content text-left" style="float:center;">
-            <h2>About Me</h2>
-            <p>Studying Speculative Design and Computer Science at the University of California, San Diego, I am passionate about combining the arts and technology by experimenting with virtual reality and 3D animation. Speculative Design critiques anthropocentric ways of things that could be possible futures. This relates to my interests in the computing aspects of human and technological interaction.</p>
-            <p>My current project focuses on transforming animation to become more factual and informative like documentaries. My overall vision is to document wildlife, specifically alligators and crocodiles, through the perspective lens of interactive animation in order to educate more people about them.
-             </p>
-         </div>
-      </div>
-    </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <section id="about" class="about">
-            <div class="container center">  
-            <div class="row">
-                    <div class="about-wrapper">  
-       
-                  <div class="about-image">
-                        <div class="col-md-6 col-sm-6 col-xs-4">
-                            <div class="circular--portrait" style="float:center;">
-                                <img src="img\Profile2.jpg" alt="About Photo" />
-                            </div>
-                        </div>
-
-                     </div>
-
-               <div class="box">
-                        <div class="col-md-12 col-sm-6 col-xs-4">
-                     
-                            <div class="about-content text-left" style="float:center;">
-                                <h4>Hi, I’m Joanna Lam, Artist from San Diego.</h4>
-                                <p>I was born and raised in a small town called Castro Valley located in East Bay, California. There was not much to do in the area so I spent a lot of my time reading fictional books, watching TV shows & movies, and painting.
-                                </p>
-                                <p >Studying Speculative Design and Computer Science at the University of California, San Diego, I am passionate about combining the arts and technology by experimenting with virtual reality and 3D animation. Speculative Design critiques anthropocentric ways of things that could be possible futures. This relates to my interests in the computing aspects of human and technological interaction.
-                                </p>
-                                <p> My current project focuses on transforming animation to become more factual and informative like documentaries. My overall vision is to document wildlife, specifically alligators and crocodiles, through the perspective lens of interactive animation in order to educate more people about them.</p>
-                    
-                            </div>
-                     
-                         </div>
-             </div>            
-                    </div> 
-                </div>	
-            </div>     
-       </section>
-
-    <!-- <section id="about" class="about">
+ <section id="about" class="about">
             <div class="container center">  
             <div class="row">
                     <div class="about-wrapper">  
@@ -270,44 +273,30 @@ function toggler(divId) {
                     </div> 
                 </div>	
             </div>     
-       </section>-->
+       </section>
 
-
-
-    <!-- Download Section -->
-    <section id="download" class="download-section content-section text-center">
-      <div class="container">
-        <div class="col-lg-12 mx-auto">
-          <h1>Combining Art and Technology</h1>
-      
-      <!--    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a> -->
-        </div>
-      </div>
-    </section>
 
     <!-- Callout -->
-   <!-- <aside class="callout">
+    <aside class="callout">
       <div class="text-vertical-center">
         <h1>Combining Art and Technology</h1>
       </div>
-    </aside> -->
+    </aside>
 
 
-    <!-- Portfolio Grid Section -->
-   <!-- <section class="portfolio" id="portfolio">
-      <div class="container">
-        <h2 class="text-center text-secondary mb-0">Projects</h2>
-        <hr class="star-dark mb-5">
-        <div class="row"> -->
-
- <section id="portfolio" class="portfolio text-white">
+    <!-- Services -->
+    <section id="services" class="services bg-primary text-white">
       <div class="container">
         <div class="row text-center">
           <div class="col-lg-12 mx-auto">
             <h2>My Projects</h2>
-            <hr class="star-dark mb-5">
+            <hr class="small">
             <div class="row">
-              <!-- Page Heading -->
+      
+
+
+
+ <!-- Page Heading -->
    <!--   <h1 class="my-4">Page Heading
         <small>Secondary Text</small>
       </h1> -->
@@ -322,1447 +311,353 @@ function toggler(divId) {
 <div class="container">
   <div class="row">
 
+<!-- Zoom -->
+   <div class="col-sm-6">
+   
+      <h2>Zoom!</h2>
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/197072731" ></iframe>
+  
+</div>
+  <div class="card-body" >
+    <div class="read-more">
+    <div class="item">
+      <div id="fade-content">
 
-
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <h4>Zoom!</h4>
-                  <h6>Arduino Powered Car</h6>
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/thumbnail/car.png?raw=true" alt="">
-            </a>
-          </div>
-
-
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-2">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                     <h4>Vitabot</h4>
-                     <h6>Healthbot Prototype</h6>
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/thumbnail/vitabot2.png?raw=true" alt="">
-            </a>
-          </div>
-
-
-
-          <div class="col-md-6 col-lg-4 ">
-        
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-3">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                     <h4>Henry Fuseli's The Nightmare</h4>
-                     <h6>Video Game Proposal</h6>
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
- 
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/thumbnail/Asset%2012.jpg?raw=true" alt="">
-            </a>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-4">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                     <h4>The Island & The Island</h4>
-                     <h6>Unity Game</h6>
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/thumbnail/islands.png?raw=true" alt="">
-            </a>
-          </div>
-
-       
-         
-         <!--5-->
-       <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-5">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                     <h4>EGO</h4>
-                     <h6>Smart Mirror Design</h6>
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/thumbnail/bluego.png?raw=true" alt="">
-            </a>
-          </div>
-
-
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-6">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                     <h4>Skin Suits</h4>
-                     <h6>Speculative Design Project</h6>
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/thumbnail/skins.png?raw=true" alt="">
-            </a>
-          </div>
-        </div>
-      </div>
-    </section> 
-
-      <!-- Portfolio Modals -->
-
-    <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-1">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Zoom!</h2>
-              <hr class="star-dark mb-5">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/197072731" ></iframe>
-              </div>
-
-              <div><iframe class="zoom" src="zoom.html" width="1200px" height="650px" frameborder="0"></iframe></div>
-             <!--  <img class="img-fluid mb-5" src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/florida10.jpg" alt=""> -->
-              <p class="mb-5">Kids are able to build their own obstacles with paper blocks and race through or knock down their creations using Bluetooth controlled Arduino vehicles.
-            This toy is free-form, modular, and it pairs nostalgia with contemporary hands-on gameplay.</br></p>
-            <p>For this project, we were given the prompt to create a toy. Our initial ideas began with cars with lasers that would make gameplay more challenging. If players got shot with the opponent's laser, they would lose health and energy. 
-              Due to the lack of time, material, and knowledge, we could not implement the lasers into our vehicles. Nevertheless, once our wireless toy cars were completed, we tested their playability with kids and discovered they still had loads
-              of fun playing without the lasers. The kids enjoyed building their own cities and castles with building blocks, and they had an even more fun time knocking down each other's castles with the cars! Overall, <i>Zoom!</i> aims to spur creative
-              thinking and imagination. </p>
-
-             <p> A big problem we faced was weight distribution and friction on our cars.
-             Everything seemed to be working properly, but when we readied the cars to drive they would not move. Our solution came to us by a Round Table pizza delivery man, who randomly stopped by our table and asked if we wanted leftover pizza.
-             Graciously we accepted and found that the <a href="https://en.wikipedia.org/wiki/Pizza_saver" target="_blank">pizza saver</a> was perfect to solve our problem. Once we attached the pizza saver onto the rear end of the car, it zoomed!</p>
+          <p>Kids are able to build their own obstacles with paper blocks and race through or knock down their creations using Bluetooth controlled Arduino vehicles.
+            This toy is free-form, modular, and pairs nostalgia with contemporary hands-on gameplay.</p>
+        <!--   <p class="read-more"> 
+             <a href="#" class="button">Read More</a>
+                <span class="more_text">
+                 This is the extra text, that will be shown after pressing the link above.
+             </span> 
              
-             <p>This project was coded using <a href="https://processing.org/" target="_blank">Processing</a> and made using Arduinos, Bluetooth modules, bread boards, wires, and batteries.
-             The presentation video was inspired from stop motion videos to create an energetic kid-friendly vibe. </p>
-            <div>
-             <!--     <a href="pdfs/147A Proposal.pdf" target="_blank" class="btn btn-dark">Read the Proposal</a> -->
-            </div> 
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
+            </p> -->
       </div>
+            <div>
+                  <a href="pdfs/147A Proposal.pdf" target="_blank" class="btn btn-dark2">Read the Proposal</a>
+            </div> 
+            </div>
+            </div>
+       
     </div>
 
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-2">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Vitabot</h2>
-              <hr class="star-dark mb-5">
-            <div class="embed-responsive embed-responsive-16by9">
+</div>
+    <div class="col-sm-6">
+ 
+<!-- vitabot -->
+      <h2>Vitabot</h2>
+<div class="embed-responsive embed-responsive-16by9">
     <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/210512119"></iframe>
     </div>
-    <div><iframe class="zoom" src="vitabot.html" width="1200px" height="1140px" frameborder="0"></iframe></div>
-              <p class="mb-5"> The Vitabot is a portable and accessible bot that maintains and attends for the user. The Bot is specially crafted to ensure that users receive maximum amount of care, servitude, protection, and fun.
-                     This prototype can be used in various ways by everyone of all ages. Specifically, it targets children who do not know what to do in emergencies or forget to bring essential medication with them. With technological upgrades, the Bot will ultimately be able to detect when
-                     its user is in an emergency or needs help, scan the enormity of the user's situation, and provide a solution to the problem. </br></p>
-                     <p>Vitabot is only an idea for a health robot and is based off of Disney's character, Baymax, from <a href="https://en.wikipedia.org/wiki/Big_Hero_6_(film)" target="_blank">Big Hero 6</a>. I used <a href="https://www.blender.org/" target="_blank">Blender</a> to 3D model the figure and 3D printed it.
-                     The head is hollow and stores emergency items inside for convenience. </p>
-                        <div>
-                 <!--  <a href="pdfs/vitabot.pdf" target="_blank" class="btn btn-dark">See the Prototype</a> -->
+    <div class="card-body">
+      <div class="item">
+     <p>
+            The Vitabot is a portable and accessible bot that maintains and attends for the user. The Bot is specially crafted to ensure that users receive maximum amount of care, servitude, protection, and fun.
+                     This prototype can be used in various ways by everyone of all ages. Specifically, it targets children who do not know what to do in emergencies. The Bot will ultimately be able to scan a situation, detect if its an emergency, and 
+                     provide a solution to the problem. 
+            </p> 
+            <div>
+                   <a href="pdfs/vitabot.pdf" target="_blank" class="btn btn-dark2">See the Prototype</a>
                 </div>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
+                </div>
           </div>
-        </div>
-      </div>
     </div>
 
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-3">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Henry Fuseli's The Nightmare</h2>
-              <hr class="star-dark mb-5">
-           <div class="embed-responsive embed-responsive-16by9">
+    <!--nightmare-->
+    <div class="col-sm-6">
+   
+      <h2>The Nightmare</h2>
+<div class="embed-responsive embed-responsive-16by9">
   <!--  <iframe class="embed-responsive-item" src="https://vimeo.com/241476995"></iframe> -->
     <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/241476995" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     
   
 </div>
-
-<!-- <iframe src="https://drive.google.com/file/d/1s92zicnUdACwOdEn91wP6c9qj-fcVUub/view?usp=sharing" 
-style="width:600px; height:700px;" frameborder="0"></iframe> -->
-
-          <div><iframe class="zoom" src="nightmare.html" width="1200px" height="800px" frameborder="0"></iframe></div>
-              <p><a href="https://drive.google.com/file/d/1s92zicnUdACwOdEn91wP6c9qj-fcVUub/view?usp=sharing" target="_blank">See Full PDF</a></p>
-              <p class="mb-5"><i>Henry Fuseli's The Nightmare</i> is a video game proposal based off Henry Fuseli's painting, <a href="https://en.wikipedia.org/wiki/The_Nightmare"target="_blank">The Nightmare</a>. This project features a young girl who suffers from sleep paralysis and nightmares. As a player, you, a college student and barista, suffer from sleep paralysis and experience the same nightmare every night. In the nightmare, you are being chased by demons and must surmount multiple obstacles and puzzles throughout the maze in order to escape.
-                  This game provides many plot twists and challenges in gameplay. <i>Henry Fuseli's The Nightmare</i> dives into the research and understanding of <a href="https://www.buzzfeed.com/carolinekee/sleep-paralysis-is-scary-af?utm_term=.vn06WXvg3#.ucLk7dVnD" target="_blank">sleep paralysis</a> and the conditions patients undergo when they experience it.
-         </p>
-
-         <p>*Game Spoilers Below*</p>
-         <p>At the end of the game when the player has defeated all the puzzles and is able to escape the dream world, the player ascends a foreboding flight of stairs. At the top, the player sees a mirror. Looking into the reflection, the player realizes that this whole time they have been 
-           playing the demon trying to escape the dream realm. This allows players to have a desire to replay the game in order to notice the subtleties of being the demon rather than Mara, the college student.
-         </p>
-
-         <p>*</p>
-
-       <p>Navigate through Mara's labyrinth by going through her schedule and daily duties. Mara's schedule is itself something you must solve in order to understand the game more. The more time you spend in <i>The Nightmare</i>, the more subtleties you'll notice.
-          (The key to understanding Mara's labyrinth website and game ideas can be found in the game proposal).</p>
-             <div>
-                  <a href="Theme/index.html" target="_blank" class="btn btn-dark" >Navigate through Mara's Labyrinth</a>
+  <div class="card-body">
+    <div class="item">
+          <p>
+            <i>Henry Fuseli's The Nightmare</i> is a video game proposal based off Henry Fuseli's painting, <a href="https://en.wikipedia.org/wiki/The_Nightmare"target="_blank">The Nightmare</a>. This project features a young girl who suffers from sleep paralysis and nightmares. As a player, you, a college student and barista, suffer from sleep paralysis and experience the same nightmare every night. In the nightmare, you are being chased by demons and must surmount multiple obstacles and puzzles throughout the maze in order to escape.
+                  This game provides many plot twists and challenges in gameplay. <i>Henry Fuseli's The Nightmare</i> dives into the research and understanding of sleep paralysis and the conditions patients undergo when they experience it.
+            </p> 
+         
+            <div>
+                  <a href="pdfs/NIGHTMARE.pdf" target="_blank" class="btn btn-dark2" >Read the Proposal</a>
                 </div>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
+                </div>
       </div>
     </div>
 
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-4">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">The Island & The Island</h2>
-              <hr class="star-dark mb-5">
-            <div class="embed-responsive embed-responsive-16by9">
+
+<!-- island -->
+       <div class="col-sm-6">
+   
+      <h2>The Island and the Island</h2>
+<div class="embed-responsive embed-responsive-16by9">
     <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/244276575"></iframe>
   
 </div>
-<div><iframe class="zoom" src="island.html" width="1200px" height="600px" frameborder="0"></iframe></div>
-
-      <div class="read-more">
-        <div class="item">
-          <div id="fade-content">
-              <p class="mb-5">Made with Unity, this abstract game focuses on challenging normal video game environments through the jaws of an alligator. This game incorporates the landscape as the game and challenges the limitations of player movement and assessment of the land. The space is itself a time fold in which overlapping identical areas can be changed by unique individual factors, of which spark separate chain reactions that evolve the entire space. Inspired by China Mieville's novel, <a href="https://en.wikipedia.org/wiki/The_City_%26_the_City" target="_blank"><i>The City and The City</i></a>, this game forces players to reconsider virtual space and question the boundaries in video games.</br> </br>
-
-
-              In Ernest Adam's <a href="https://www.gamasutra.com/view/feature/131352/designers_notebook_the_role_of_.php?page=2" target="_blank">Designer's Notebook: The Role of Architecture in Videogames</a>, he speaks about
-              how the primary role of game architecture is to support gameplay. <i>The Island & the Island</i>, however, seeks to challenge this belief and promotes game architecture as the source of gameplay. Game architecture is as vital to the game as the story, characters, and gameplay. According to Jon Brouchoud  “architecture can tell a story, evoke emotion and shape player experience more effectively than any other aspect of your game.  You can have the best characters, storyline, and UI graphics, but without an equally considerate approach to architecture, your player experience will always fall short of its fullest potential.” Thus, my game entirely focuses on game architecture and highlights game architecture as the game itself. </br> </br>
-            
-              <i>The Island and the Island</i> deals with concepts regarding space exploration, particularly spaces no one usually explores or touches in video games. Within the game are mini puzzles and obstacles, but the main purpose of the game is to focus on minute changes occurring in the landscape based on the player’s choices. When the player figures out what those changes are, he or she will be able to unlock another dimension of the game. Players depend on the structure of the game's virtual space to guide them through the journey.  </br> </br>
-
-              The exploration process includes trekking on places that are usually restricted in video games, like the backside of mountains, inside rocks, and underneath islands. Within the island are hidden triggers that teleport the player somewhere else on the islands. The game centers mainly on problem solving and strategic navigation in order to discover hidden Easter eggs and clues on the island. The idea is about uncovering and exposing the island so the player becomes more familiar with the landscape. </br> </br>
-
-              Landscapes in typical games are used for supportive roles that act as barriers, aesthetic purposes, or something to get past. This game, however, incorporates the landscape as the game and challenges the limitations of player movement and assessment of the land. Players must have faith in the space that it will guide them to the endgame. From the perspective of the alligator’s mouth, the game also is much harder to navigate and see the environment. </br> </br>
-            
-              Furthermore, in the Mieville's novel there is a speculation of a third city in between these two cities. Playing around with this concept, my game incorporates a hidden third dimension that can only be found through exploration. The significance of the third space is to challenge the idea of two dimensional space and how space is accepted in today's culture. Space within a virtual game environment is represented as the game itself. Even though I disagree with Adam's notion of game architecture as only support, I do agree that games should have a supportive architecture yet also be a fundamental part of the game itself. Players should feel that the game environment stimulates creative thinking, imagination, and problem solving. </p>
-
-
-                </div>
-              </div>
-           </div> <!--end of read more div -->
-                 <div>
-                  <a href="videogame/TheIslandandTheIsland.exe" target="_blank" class="btn btn-dark">Download the Game</a>
+  <div class="card-body">
+    <div class="item">
+          <p>Made with Unity, this abstract game focuses on challenging normal video game environments through the jaws of an alligator. This game incorporates the landscape as the game and challenges the limitations of player movement and assessment of the land. The space is itself a time fold in which overlapping identical areas can be changed by unique individual factors, of which spark separate chain reactions that evolve the entire space. Inspired by China Mieville's novel <i>The City and The City</i>, this game forces players to reconsider virtual space and question the boundaries in video games. Play the game or read more <a target="_blank" href="pdfs/Island.pdf">here</a>.</p>
+          <div>
+                  <a href="videogame/TheIslandandTheIsland.exe" target="_blank" class="btn btn-dark2">Download the Game</a>
             </div>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
+      </div>
       </div>
     </div>
 
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-5">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">EGO</h2>
-              <hr class="star-dark mb-5">
-            <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/242797642"></iframe>
-  
+
+
+  </div>
 </div>
-<div><iframe class="zoom" src="ego.html" width="1200px" height="800px" frameborder="0"></iframe></div>
-              <p class="mb-5">EGO is a fashion-related <a href="http://www.alanturing.net/turing_archive/pages/reference%20articles/what%20is%20ai.html" target="_blank">AI</a> that transforms the way we see fashion by providing several
-              features to help users with outfit planning. EGO transforms the role of fashion industry in creating personalized clothings tailored to
-              the user's social media trends. EGO takes on the reflection of the user as its shell. EGO allows you to interact with "yourself" and simulates an out of body experience. 
-                Another one of the many features of EGO is the ability to show the user in multiple outfits without the user actually physically putting them on.
-                The user selects outfits the mirror recommends and EGO tries on the selected clothes.</p>
-              <p>Each EGO unit has its own neural network adhered to the user. It relies on <a href="https://en.wikipedia.org/wiki/Reinforcement_learning" target="_blank">reinforcement learning</a>, a model of AI learning that uses rewards and punishments to
-                "reinforce" its knowledge and understanding. EGO can also detect moods and emotional states of the user for better outfit suggestions. All the information
-                recorded in each EGO will be sent into a cloud based system for business research so big fashion industries can learn what styles are trending.  
-              </p>
-                <p>After the first prototypes of EGO were released to test consumers, there seemed to be glitches within the neural network. Some of these included
-                  misinterpreting weather conditions, repeating outfits with friends, miscalculating trends, and misjudging age.
-                </p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
+
+
+
+  
+      </div> 
+
+
             </div>
+            <!-- /.row (nested) -->
           </div>
+          <!-- /.col-lg-10 -->
         </div>
+        <!-- /.row -->
       </div>
-    </div>
+      <!-- /.container -->
+    </section>
 
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Skin Suits</h2>
-              <hr class="star-dark mb-5">
-     
-             <div><iframe class="zoom" src="skinsuits.html" width="1200px" height="700px" frameborder="0"></iframe></div>
-              <p class="mb-5">Skin Suits are a second layer of skin made to give the user different identities. Users will have the experience of changing skin color(s)
-                 or pattern(s) to conceal innate blemishes or unwanted scars. The purpose is that by wearing these suits, racial segregation will be diminished as everyone and anyone can be any color they want. </p>
-                 <p>All users of Skin Suits must apply SWEAT (sw-ee-t), a mixture of hydration fluids and antibacterial proteins that decrease the risk of infection upon use.</p>
-                 <p>Skin Suits are developed and cultured in state of the art labs using 3D printing and growth accelerators. With a sample of the customer's skin, full body skin suits are matured and distributed all over the world.
-                   DNA inside the nucleus is replaced with genetically modified DNA that changes the color of the epidermal cells. Once the cells have been inserted with the new DNA, the cells begin to multiply and grow on custom Skin Suit molds.
-                 </p>
-                <div>
-                  <a href="http://joanna21lam.wixsite.com/skinsuits" target="_blank" class="btn btn-dark">Buy a Skin Suit</a>
-            </div>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- callout original here -->
 
 
 
-<!--3D Modeling -->
-
-<section id="dim" class="dim">
+<!-- 3D -->
+    <section id="dim" class="dim">
       <div class="container">
         <div class="row">
           <div class="col-lg-10 mx-auto text-center">
-            <h2>3D Models</h2>
-
-              <hr class="star-dark mb-5">
-                <div class="row">
-                     <div class="row">
-
-                        <div class="container">
-                            <div class="row">
-
-
-     <!--baymax-->
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-10">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                     <h4>Baymax</h4>
-                     <h6>Blender</h6>
-                  <i class="fa fa-search-plus fa-3x"></i>
+            <h2>3D Modeling</h2>
+                  <h4> Blender </h4>
+                <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
+            <hr class="small">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="3d-item">
+                    <img class="img-portfolio2 img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/babybaymax.png?raw=true" >
+                    <div class="image-hover"> </div>
                 </div>
-              </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/babybaymax.png?raw=true" alt="">
-            </a>
-          </div> 
-
-  <!--ocean - texturing and rendering-->
-       <!--    <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-11">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <h4>Ocean</h4>
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gamecontrol.png?raw=true" alt="">
-            </a>
-          </div> -->
-
-          <!--game controller-->
-           <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-12">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <h4>Game Controller</h4>
-                  <h6>Blender</h6>
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gamecontrol.png?raw=true" alt="">
-            </a>
-          </div>
-
-          <!--HQ-->
-           <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-13">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <h4>Harley Quinn</h4>
-                  <h6>Blender</h6>
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/HarleyQuinnModel.png?raw=true" alt="">
-            </a>
-          </div>
-
-
-      <!-- 3D modeling Modals -->
-
-    <!--  Modal 10 : baymax -->
-   <div class="portfolio-modal mfp-hide" id="portfolio-modal-10">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Baymax</h2>
-  <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
-              <hr class="star-dark mb-5">
-
-    <div class="row center">
-              <div class ="col-lg-6 col-sm-4 col-md-6">
-                  <img class="img-fluid mb-5" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/3d/baymax/angle.png?raw=true" alt="">
-              </div>
-              <div class="col-lg-6 col-sm-6 col-md-4">
-                  <img class="img-fluid mb-5" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/3d/baymax/side.png?raw=true" alt="">
-              </div>
-                <div class ="col-lg-6 col-sm-6 col-md-4">
-                   <img class="img-fluid mb-5" src=" https://github.com/jwlam21/jwlam21.github.io/blob/master/img/3d/baymax/front.png?raw=true" alt="">
-              </div>
-                <div class ="col-lg-6 col-sm-6 col-md-4">
-                  <img class="img-fluid mb-5" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/3d/baymax/render.png?raw=true" alt="">
               </div>
              
-            </div>
-         
-            
-             <!-- <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, 
-                recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
-                
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-
-    <!-- Photo Modal 11 -->
-   <!--    <div class="portfolio-modal mfp-hide" id="portfolio-modal-11">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Ocean</h2>
-              <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/florida10.jpg" alt="">
-               <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, 
-                recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> 
-                <div>
-                  <a href="http://joanna21lam.wixsite.com/skinsuits" target="_blank" class="btn btn-dark">Buy a Skin Suit</a>
-            </div>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- Photo Modal 12 -->
-      <div class="portfolio-modal mfp-hide" id="portfolio-modal-12">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Game Controller</h2>
-      <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
-              <hr class="star-dark mb-5">
-
-    <div class="row center">
-              <div class ="col-lg-6 col-sm-4 col-md-6">
-                  <img class="img-fluid mb-5" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/3d/gc/buttons.png?raw=true" alt="">
+              <div class="col-md-6">
+                <div class="3d-item">
+                    <img class="img-portfolio2 img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gamecontrol.png?raw=true">
+                </div>
               </div>
-              <div class="col-lg-6 col-sm-6 col-md-4">
-                  <img class="img-fluid mb-5" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/3d/gc/side.png?raw=true" alt="">
-              </div>
-             
+
+</div>
+
+              <!-- uncomment when there's more to show -->
+             <!--  <div class ="col-lg-12 col-md-6">
+                <a href="grid/graphicdesign.html" target = "_blank" class="btn btn-lg btn-dark3">See more</a> 
+                </div> -->
+              
+          
+
             </div>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
+            <!-- /.row (nested) -->
+           <!-- <a href="C:\Users\joann\Desktop\Website_bootstrap\grid\grid.html"  target="_blank" class="btn btn-dark">View More Items</a> -->
           </div>
+          <!-- /.col-lg-10 -->
         </div>
+        <!-- /.row -->
       </div>
-    </div>
-    </div>
-
-        <!-- Photo Modal 13 -->
-      <div class="portfolio-modal mfp-hide" id="portfolio-modal-13">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Harley Quinn</h2>
-               <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
-              <hr class="star-dark mb-5">
-
-    <div class="row center">
-              <div class ="col-lg-6 col-sm-4 col-md-6">
-                  <img class="img-fluid mb-5" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/3d/hq/front.png?raw=true" alt="">
-              </div>
-              <div class="col-lg-6 col-sm-6 col-md-4">
-                  <img class="img-fluid mb-5" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/3d/hq/back.png?raw=true" alt="">
-              </div>
-             
-            </div>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
+      <!-- /.container -->
+    </section>
 
 
 
-</section>  <!--end of photo modal-->
 
-<!--Graphic -->
-
-<section id="graphic" class="graphic">
-      <div class="container center">
+ <!-- Graphics -->
+    <section id="graphics" class="graphics">
+      <div class="container">
         <div class="row">
           <div class="col-lg-10 mx-auto text-center">
-            <h2>Graphics</h2>
-
-              <hr class="star-dark mb-5">
-                <div class="row ">
-                     <div class="row center">
-
-                        <div class="container center">
-                            <div class="row center">
-
-
-            <!--Graphic Design -->
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-14">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100 text-center">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                     <h4>Graphic Design</h4>
-                     <h6>Adobe Creative Cloud</h6>
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/panda.jpg?raw=true" alt="">
-            </a>
-          </div> 
-
- 
-          <!--Illustrations-->
-           <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-15">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <h4>Digital Illustrations</h4>
-                  <h6>Adobe Creative Cloud</h6>
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/lowpoly_black.png?raw=true" alt="">
-            </a>
-          </div>
-
-
-            <!--Traditional-->
-           <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-20">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <h4>Traditional</h4>
-                  <h6>Acrylic Paint, Colored Pencil, Spray Paint, Paint Tool Sai</h6>
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/goldgator.jpg?raw=true" alt="">
-            </a>
-          </div>
-
-
-
-      <!-- 2d art Modals -->
-
-    <!-- Photo Modal 14 -->
-   <div class="portfolio-modal mfp-hide" id="portfolio-modal-14">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-12 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Graphic Design</h2>
-                 <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
-
-                     <div class="tz-gallery">
-
-      
-            <!--  <hr class="star-dark mb-5"> -->
-
-                                    <div class="row center">
-                                            <div class="col-sm-6 col-md-4">
-                                              <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/fall.jpg?raw=true">
-                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/fall.jpg?raw=true" alt="Coast">
-                                              </a>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4">
-                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/winter_2.jpg?raw=true">
-                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/winter_2.jpg?raw=true" alt="Coast">
-                                                </a>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4">
-                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/spring.jpg?raw=true">
-                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/spring.jpg?raw=true" alt="Coast">
-                                                </a>
-                                            </div>
-
-                             
-                                           <div class="col-sm-6 col-md-4">
-                                              <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/IceCream_facebook.png?raw=true">
-                                                  <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/IceCream_facebook.png?raw=trueg" alt="ice cream">
-                                              </a>
-                                          </div>
-                                                            <div class="col-sm-12 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/LaserTag_facebook.png?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/LaserTag_facebook.png?raw=true" alt="laser">
-                                                                </a>
-                                                            </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/parking_rgb.jpg?raw=true">
-                                                <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/parking_rgb.jpg?raw=true" alt="parking">
-                                            </a>
-                                        </div>
-                                                          <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/multiculture_fb.jpg?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/multiculture_fb.jpg?raw=true" alt="multiculture">
-                                                                </a>
-                                                            </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/recess_fb.jpg?raw=true">
-                                                <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/recess_fb.jpg?raw=true" alt="recess">
-                                            </a>
-                                        </div>
-                                                            <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/transfer.jpg?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/transfer.jpg?raw=true" alt="transfer">
-                                                                </a>
-                                                            </div>
-                                        <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/auditions.jpg?raw=true">
-                                            <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/auditions.jpg?raw=true" alt="auditions">
-                                        </a>
-                                    </div>
-                                                          <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/talent.jpg?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/talent.jpg?raw=true" alt="talent">
-                                                                </a>
-                                                            </div>
-                                      <div class="col-sm-6 col-md-4">
-                                      <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/painting.jpg?raw=true">
-                                          <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/painting.jpg?raw=true" alt="Coast">
-                                      </a>
-                                  </div>
-                                                                <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/coffee.jpg?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/coffee.jpg?raw=true" alt="coffee">
-                                                                </a>
-                                                        
-                                                              </div>
-                                    <div class="col-sm-6 col-md-4">
-                                    <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/final_countdown_fb.jpg?raw=true">
-                                        <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/final_countdown_fb.jpg?raw=true" alt="coffee">
-                                    </a>
-                                </div>
-                                                            <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/WinterWarrenland_fb.jpg?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/WinterWarrenland_fb.jpg?raw=true" alt="coffee">
-                                                                </a>
-                                                            </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/thumbnail/zootrip_fb3.jpg?raw=true">
-                                            <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/thumbnail/zootrip_fb3.jpg?raw=true" alt="coffee">
-                                        </a>
-                                    </div>
-
-
-                                                             <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/LYMsunset.png?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/LYMsunset.png?raw=true" alt="lym">
-                                                                </a>
-                                                            </div>
-                                                              <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/sesc.png?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/sesc.png?raw=true" alt="sesc">
-                                                                </a>
-                                                            </div>
-
-
-
-                                                        
-                                            
-                                      </div>
-
-
-                    </div>  
-                    
-              </div>
-
-
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Photo Modal 15 -->
-       <div class="portfolio-modal mfp-hide" id="portfolio-modal-15">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-12 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Digital Illustrations</h2>
+          <!--  <a href="grid/graphicdesign.html" target="_blank"> -->
+            <h2>Graphic Design</h2>
+            <h4> Adobe Creative Suite </h4>
                 <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
-
-                     <div class="tz-gallery">
-
-      
-            <!--  <hr class="star-dark mb-5"> -->
-
-                                    <div class="row center">
-
-                                                               <div class = "col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/CGUnderwaterGator.png?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/CGUnderwaterGator.png?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                                           
-                                                              <div class = "col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/thumbnail/panda_geometric2.png?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/thumbnail/panda_geometric2.png?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                                            
-                                                            <div class="col-sm-6 col-md-4">
-                                                            <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/3GO.png?raw=true">
-                                                                <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/3GO.png?raw=true" alt="ego">
-                                                            </a>
-                                                        </div>
-                                                              
-                                                            <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/41.jpg?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/41.jpg?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                                            <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/TickTockCroc.png?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/TickTockCroc.png?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                               
-                                                             <div class = "col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/gatorcroc.png?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/gatorcroc.png?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-
-                                      
-                                                            <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/Asset%206.png?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/Asset%206.png?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                                            
-                                                            <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/vitabot_blue.png?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/vitabot_blue.png?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                                          
-                                                            <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/how_vitabot_works.png?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/how_vitabot_works.png?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                                              <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/Alligator%20in%20my%20pocket.png?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/Alligator%20in%20my%20pocket.png?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                                             <div class = "col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/front.png?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/front.png?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                                    
-                                          
-
-                                                
-                                            
-                                      </div>
-
-
-                    </div>  
-                    
+            <hr class="small">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="graphic-item">
+               <!--   <a href="C:\Users\joann\Desktop\Website_bootstrap\img\gd\CGUnderwaterGator.png" > -->
+                 
+                  <a href="grid/graphicdesign.html" target="_blank">
+                    <img class="img-portfolio img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/bluebay.png?raw=true" > <!--img\gd\3GO.png"> -->
+                   <!--  <a href="grid/graphicdesign.html" target = "_blank" class="btn btn-lg btn-dark">Advertisement/Marketing</a> -->
+                  </a>
+                </div>
+              </div>
+             
+              <div class="col-md-6">
+                <div class="graphic-item">
+          <!--        <a href="C:\Users\joann\Desktop\Website_bootstrap\grid\grid_mammals.html" target="_blank"> -->
+                       <a href="grid/graphicdesign.html" target="_blank">
+                    <img class="img-portfolio img-fluid" src="img\gd\lowpoly.png">
+                    <!-- <a href="grid/graphicdesign.html" target = "_blank" class="btn btn-lg btn-dark">Illustrations</a> -->
+                  </a>
+                </div>
               </div>
 
 
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
+               <div class ="col-lg-12 col-md-6">
+                <a href="grid/graphicdesign.html" target = "_blank" class="btn btn-lg btn-dark3">See more</a> 
+                </div>
+              
           </div>
-        </div>
-      </div>
-    </div>
-
-     <!-- Photo Modal 20 -->
-       <div class="portfolio-modal mfp-hide" id="portfolio-modal-20">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-12 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Traditional</h2>
-                <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
-
-                     <div class="tz-gallery">
-
-      
-            <!--  <hr class="star-dark mb-5"> -->
-
-                                    <div class="row center">
-
-                                                               <div class = "col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/illustrations/Gold%20Alligator.jpg?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/illustrations/Gold%20Alligator.jpg?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                                           
-                                                              <div class = "col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/illustrations/Richard.jpg?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/illustrations/Richard.jpg?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                                            
-                                                          
-                                                            <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/illustrations/succulent.jpg?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/illustrations/succulent.jpg?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                                                     <div class = "col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/Charmander_on_ice.png?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/Charmander_on_ice.png?raw=true " alt="Coast">
-                                                                </a>
-                                                            </div>
-                                                               <div class = "col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/illustrations/Sketch%20no1%203.png?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/illustrations/Sketch%20no1%203.png?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                                               <div class = "col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/illustrations/Hokuchai.jpg?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/illustrations/Hokuchai.jpg?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                               
-                                                 <div class="col-sm-6 col-md-4">
-                                                            <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/illustrations/elsa.jpg?raw=true">
-                                                                <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/illustrations/elsa.jpg?raw=true" alt="ego">
-                                                            </a>
-                                                        </div>
-                                                              
-                                                            <div class="col-sm-6 col-md-4">
-                                                                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/illustrations/rubiks.jpg?raw=true">
-                                                                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/illustrations/rubiks.jpg?raw=true" alt="Coast">
-                                                                </a>
-                                                            </div>
-                                                            
-
-                                                        
-                                            
-                                      </div>
-
-
-                    </div>  
-                    
-              </div>
-
-
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
             </div>
+            <!-- /.row (nested) -->
+           <!-- <a href="C:\Users\joann\Desktop\Website_bootstrap\grid\grid.html"  target="_blank" class="btn btn-dark">View More Items</a> -->
           </div>
+          <!-- /.col-lg-10 -->
         </div>
+        <!-- /.row -->
       </div>
-    </div>
-
-
-  
-
-</section>  <!--end of photo modal-->
+      <!-- /.container -->
+    </section>
 
 
 
-
-
-<!--Photography -->
-
-<section id="photos" class="photos">
+    <!-- Projects -->
+    <section id="projects" class="projects">
       <div class="container">
         <div class="row">
           <div class="col-lg-10 mx-auto text-center">
             <h2>Photography</h2>
-
-              <hr class="star-dark mb-5">
-                <div class="row">
-                     <div class="row">
-
-                        <div class="container">
-                            <div class="row">
-
-
-            <!--reptiles -->
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-7">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                     <h4>Reptiles</h4>
-                  <i class="fa fa-search-plus fa-3x"></i>
+            <h4>Albums</h4>
+                <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
+            <hr class="small">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="project-item">
+                  <a href="grid\grid.html" target="_blank">
+                    <img class="img-portfolio img-fluid" src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/butt.JPG">
+                  </a>
                 </div>
               </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/butt.JPG?raw=true" alt="">
-            </a>
-          </div> 
-
- 
-          <!--mammals-->
-           <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-8">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <h4>Mammals</h4>
-                  <i class="fa fa-search-plus fa-3x"></i>
+              <div class="col-md-6">
+                <div class="portfolio-item">
+                  <a href="grid/grid_mammals.html" target="_blank">
+                    <img class="img-portfolio img-fluid" src="img/mane.jpg">
+                  </a>
                 </div>
               </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/mane.jpg?raw=true" alt="">
-            </a>
-          </div>
-
-          <!--floral-->
-           <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-9">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <h4>Floral</h4>
-                  <i class="fa fa-search-plus fa-3x"></i>
+              <div class="col-md-6">
+                <div class="portfolio-item">
+                  <a href="grid/grid_floral.html" target="_blank">
+                    <img class="img-portfolio img-fluid" src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/flower.JPG">
+                  </a>
                 </div>
               </div>
-              <img class="img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/flower.JPG?raw=true" alt="">
-            </a>
-          </div>
-
-
-      <!-- Photography Modals -->
-
-    <!-- Photo Modal 7 : Reptiles -->
-   <div class="portfolio-modal mfp-hide" id="portfolio-modal-7">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-12 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Reptiles</h2>
-               <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
-
-                     <div class="tz-gallery">
-
-      
-            <!--  <hr class="star-dark mb-5"> -->
-
-                                    <div class="row center">
-                                             <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/florida8.jpg">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/florida8.jpg" alt="Bridge">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/florida4.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/florida4.JPG" alt="Tunnel">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/florida7.jpg">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/florida7.jpg" alt="Coast">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/florida10.jpg">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/florida10.jpg" alt="Rails">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/florida.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/florida.JPG" alt="Traffic">
-                                        </a>
-                                    </div>
-                                  
-                            
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/tail2.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/tail2.JPG" alt="Rocks">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/smile.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/smile.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/tail.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/tail.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-                              
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/africa.jpg">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/africa.jpg" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/hidden.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/hidden.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/green.png">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/green.png" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/hang.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/hang.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/hangloose.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/hangloose.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/hide.png">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/hide.png" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/butt.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/butt.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/lazy.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/lazy.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/leafboat.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/leafboat.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/lick2.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/lick2.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/licky.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/licky.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/lick3.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/lick3.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/notail.jpg">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/notail.jpg" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/orange.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/orange.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/lizsil.png">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/lizsil.png" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/liz.png">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/liz.png" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/peek.png">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/peek.png" alt="Sky">
-                                        </a>
-                                    </div> 
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/pop.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/pop.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/sneak.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/sneak.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/step.JPG">
-                                            <img src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/photos/step.JPG" alt="Sky">
-                                        </a>
-                                    </div>
-
-
-
-                                                        
-                                            
-                                      </div>
-
-
-                    </div>  
-                    
+              <div class="col-md-6">
+                <div class="portfolio-item">
+                  <a href="grid/grid.html" target="_blank">
+                    <img class="img-portfolio img-fluid" src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/florida.JPG">
+                  </a>
+                </div>
               </div>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
+         </div>
             </div>
+            <!-- /.row (nested) -->
+           <!-- <a href="C:\Users\joann\Desktop\Website_bootstrap\grid\grid.html"  target="_blank" class="btn btn-dark">View More Items</a> -->
           </div>
+          <!-- /.col-lg-10 -->
         </div>
+        <!-- /.row -->
       </div>
-    </div>
-
-    <!-- Photo Modal 8 -->
-       <div class="portfolio-modal mfp-hide" id="portfolio-modal-8">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-12 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Mammals</h2>
-              <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
-
-                     <div class="tz-gallery">
-
-      
-            <!--  <hr class="star-dark mb-5"> -->
-
-                                    <div class="row center">
-                              
-                                          <!--photos-->
-                                            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/cheetah2.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/cheetah2.JPG?raw=true" alt="Park">
-                </a>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/cheetah.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/cheetah.JPG?raw=true" alt="Bridge">
-                </a>
-            </div>
-                   <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/mane.jpg?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/mane.jpg?raw=true" alt="Sky">
-                </a>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/mane2.jpg?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/mane2.jpg?raw=true" alt="Tunnel">
-                </a>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/tongue.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/tongue.JPG?raw=true" alt="Coast">
-                </a>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/wolf2.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/wolf2.JPG?raw=true" alt="Rails">
-                </a>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/giraffe.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/giraffe.JPG?raw=true" alt="Traffic">
-                </a>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/koala2.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/koala2.JPG?raw=true" alt="Rocks">
-                </a>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/koala3.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/koala3.JPG?raw=true" alt="Benches">
-                </a>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/panda.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/panda.JPG?raw=true" alt="Sky">
-                </a>
-            </div>
-            
-
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/pandasleep.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/pandasleep.JPG?raw=true" alt="Sky">
-                </a>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/polar.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/polar.JPG?raw=true" alt="Sky">
-                </a>
-            </div>
-   
-             <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/whale.png?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/whale.png?raw=true" alt="Rocks">
-                </a>
-            </div>
-       
-     
-
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/dolphin.png?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/dolphin.png?raw=true" alt="Sky">
-                </a>
-            </div>
-
-                                                        
-                                            
-                                      </div>
-
-
-                    </div>  
-                    
-              </div>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Photo Modal 9 -->
-      <div class="portfolio-modal mfp-hide" id="portfolio-modal-9">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-12 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Floral</h2>
-               <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
-
-                     <div class="tz-gallery">
-
-      
-            <!--  <hr class="star-dark mb-5"> -->
-
-                                    <div class="row center">
-                              
-                                          <!--photos-->
-                                            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/1.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/1.JPG?raw=true" alt="Park">
-                </a>
-            </div>
-                             <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/2.png?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/2.png?raw=true" alt="Sky">
-                </a>
-            </div>
-                             <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/3.png?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/3.png?raw=true" alt="Sky">
-                </a>
-            </div>
-                             <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/4.png?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/4.png?raw=true" alt="Sky">
-                </a>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/5.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/5.JPG?raw=true" alt="Bridge">
-                </a>
-            </div>
-                   <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/6.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/6.JPG?raw=true" alt="Sky">
-                </a>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/7.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/7.JPG?raw=true" alt="Tunnel">
-                </a>
-            </div>
-                             <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/8.JPG?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/8.JPG?raw=true" alt="Sky">
-                </a>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/9.png?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/9.png?raw=true" alt="Coast">
-                </a>
-            </div>
-             <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/10.png?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/10.png?raw=true" alt="Coast">
-                </a>
-            </div>
-             <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/11.png?raw=true">
-                    <img src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/photos/floraexp/11.png?raw=true" alt="Coast">
-                </a>
-            </div>
-
-                                                        
-                                            
-                                      </div>
-
-
-                    </div>  
-                    
-              </div>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-</section>  <!--end of photo modal-->
-         
-
- 
+      <!-- /.container -->
+    </section>
 
 
 
 
 
-    <!-- Contact Section -->
-   <!-- <section id="contact" class="content-section text-center">
+<!-- 2D -->
+ <!--   <section id="2dim" class="2dim">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>Contact Me</h2>
-            <p>Feel free to leave us a comment on the
-              <a href="http://startbootstrap.com/template-overviews/grayscale/">Grayscale template overview page</a>
-              on my page to give some feedback about this theme!</p>
-            <ul class="list-inline banner-social-buttons">
-              <li class="list-inline-item">
-                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg">
-                  <i class="fa fa-twitter fa-fw"></i>
-                  <span class="network-name">Twitter</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://github.com/BlackrockDigital/startbootstrap" class="btn btn-default btn-lg">
-                  <i class="fa fa-github fa-fw"></i>
-                  <span class="network-name">Github</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg">
-                  <i class="fa fa-google-plus fa-fw"></i>
-                  <span class="network-name">Google+</span>
-                </a>
-              </li>
-            </ul>
+          <div class="col-lg-10 mx-auto text-center">
+            <h2>2D Artwork</h2>
+
+                <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
+            <hr class="small">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="2d-item">
+                    <img class="img-portfolio3 img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/Charmander_on_ice.png?raw=true" height="300px">
+                    <div class="image-hover"> </div>
+                </div>
+              </div>
+             
+              <div class="col-md-6">
+                <div class="2d-item">
+                    <img class="img-portfolio3 img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/Richard.jpg?raw=true">
+                </div>
+              </div>
+
+</div> -->
+
+              <!-- uncomment when there's more to show -->
+             <!--  <div class ="col-lg-12 col-md-6">
+                <a href="grid/graphicdesign.html" target = "_blank" class="btn btn-lg btn-dark3">See more</a> 
+                </div> -->
+              
+          
+
+ <!--           </div>
+           
+           
           </div>
+   
         </div>
+   
       </div>
+  
     </section> -->
 
 
 
+
+
+
+
+
+
+    <!-- Call to Action -->
+  <!--  <aside class="call-to-action bg-primary text-white">
+      <div class="container text-center">
+        <h3>Questions?</h3>
+        <a href="#" class="btn btn-lg btn-light">Email me!</a>
+        <a href="#" class="btn btn-lg btn-dark">Send me a note!</a>
+      </div>
+    </aside> -->
+
+    <!-- Map -->
+<!--   <section id="contact" class="map">
+
+     <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6701.3540953319625!2d-117.2362999!3d32.8802632!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc06c4414caf4f%3A0xefb6aafc89913ea7!2sUniversity+of+California+San+Diego!5e0!3m2!1sen!2sus!4v1507889176373" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <br/>
+      <small>
+        <a href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6701.3540953319625!2d-117.2362999!3d32.8802632!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc06c4414caf4f%3A0xefb6aafc89913ea7!2sUniversity+of+California+San+Diego!5e0!3m2!1sen!2sus!4v1507889176373"></a>
+      </small>
+    </section>  -->
+
+
+<section id="contact">
+
     <!-- Footer --> 
-    <section id="contact"> 
     <footer>
       <div class="container">
         <div class="row">
@@ -1809,41 +704,18 @@ style="width:600px; height:700px;" frameborder="0"></iframe> -->
       </a>
     </footer>
 
-    <!-- Map Section -->
-  <!--  <div id="map"></div> -->
-
-
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-   <!-- <script type="text/javascript" src="js/baguetteBox.js"></script> -->
-       
-    <!-- Plugin JavaScript -->
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
-
     <!-- Custom scripts for this template -->
-    <script src="js/grayscale.min.js"></script>
+    <script src="js/stylish-portfolio.js"></script>
 
-    <!-- baguette box -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-<script>
-    baguetteBox.run('.tz-gallery'); 
-    //baguetteBox.run('.tz-gallery', {
-    //animation: 'fadeIn',
-    //noScrollbars: true
-//});
-</script>
-
-
-    <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
+    </section>
 
   </body>
 
