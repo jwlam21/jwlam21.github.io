@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Joanna Lam</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+
+    <!-- read more drop down hidden -->
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
+	<script>
+	
+   //expand text 
+
+    $(function(){ /* to make sure the script runs after page load */
+
+	
+  $('.item').each(function(event){ /* select all divs with the item class */
+	
+		var max_length = 211; /* set the max content length before a read more link will be added */
+		
+		if($(this).html().length > max_length){ /* check for content length */
+			
+			var short_content 	= $(this).html().substr(0,max_length); /* split the content in two parts */
+			var long_content	= $(this).html().substr(max_length);
+			
+			$(this).html(short_content+
+						 '<a href="#" class="read_more"><br/>Read More</a>'+
+						 '<span class="more_text" style="display:none;">'+long_content+'</span>'); /* Alter the html to allow the read more functionality */
+						 
+			$(this).find('a.read_more').click(function(event){ /* find the a.read_more element within the new html and bind the following code to it */
+ 
+				event.preventDefault(); /* prevent the a from changing the url */
+				$(this).hide(); /* hide the read more button */
+				$(this).parents('.item').find('.more_text').show(); /* show the .more_text span */
+
+
+		 
+			});
+			
+		}
+			//$('.item').fadeOut();
+
+    
+	});
+ 
+
+		
+		});
+	</script>
+
+<!--scroll bar hide -->
+
+  <!--// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('nav').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('nav').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('nav').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+} -->
+
+
+  </head>
+
+  <body>
+      <!-- this element will be visible at xs device width -->
+<!-- <div class="navbar-static-top visible-xs-block">
+
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
+          <i class="fa fa-times"></i>
+        </a>
+        <li class="sidebar-brand">
+          <a class="js-scroll-trigger" href="#top">Joanna Lam</a>
+        </li>
+        <li>
+          <a class="js-scroll-trigger" href="#top">Home</a>
+        </li>
+
+           <li>
+          <a class="js-scroll-trigger" href="#about">About</a>
+        </li>
+      
+      
+        <li>
+          <a class="js-scroll-trigger" href="#services">Projects</a>
+        </li>
+   
+         <li>
+          <a class="js-scroll-trigger" href="#dim">3D Modeling</a>
+        </li>
+  
+          <li>
+          <a class="js-scroll-trigger" href="#graphics">Graphic Design</a>
+        </li>
+    
+        <li>
+          <a class="js-scroll-trigger" href="#projects">Photography</a>
+        </li>
+  
+         <li>
+          <a class="js-scroll-trigger" href="#2dim">2D Artwork</a>
+        </li>
+    
+       
+        <li>
+          <a class="js-scroll-trigger" href="#contact" onclick=$( "#menu-close").click();>Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+
+</div>   -->
+ 
+<!-- <div class="navbar-default hidden-xs"> -->
+  <!-- this element will be visible for all device widths except xs -->
+
+ <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#">Joanna Lam</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Projects</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#dim">3D Modeling</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#graphics">Graphic Design</a>
+            </li>
+
+            <div class="dropdown">
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#projects">Photography</a>
+                                    
+                                          <div class="dropdown-content">
+                             
+                                  <a href="http://joannawlam.com/grid/grid.html" target="_blank">Reptiles</a>
+                                 <a href="http://joannawlam.com/grid/grid_mammals.html"target="_blank">Mammals</a>
+                                  <a href="http://joannawlam.com/grid/grid_floral.html"target="_blank">Floral</a>
+                          
+                          </div>
+                       
+            </li>
+               </div>
+            
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+</div>
+
+
+
+
+
+    <!-- Header -->
+    <header class="header" "nav-down" id="top">
+      <div class="text-vertical-center">
+             <div class="div-menu">
+                            <header class="cd-header">
+                                <div id="cd-logo">
+                                    <a href="index.html"><img src="img\white logo.png" width= "5%%" height="2%" alt="white logo.png"></a>
+                                </div> 
+                                <a class="cd-menu-trigger" href="#main-nav"><span></span></a>
+                            </header>
+                        </div>
+
+        <h1>Joanna Lam</h1>
+        <h3>3D Artist and Future Animator</h3>
+        <h4>I'm passionate about combining the arts and technology.</h4>
+        <br>
+        <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger">Find Out More</a>
+      </div>
+    </header>
+
+    <!-- About -->
+
+ <section id="about" class="about">
+            <div class="container center">  
+            <div class="row">
+                    <div class="about-wrapper">  
+       
+                  <div class="about-image">
+                        <div class="col-md-6 col-sm-6 col-xs-4">
+                            <div class="circular--portrait" style="float:center;">
+                                <img src="img\Profile2.jpg" alt="About Photo" />
+                            </div>
+                        </div>
+
+                     </div>
+
+               <div class="box">
+                        <div class="col-md-12 col-sm-6 col-xs-4">
+                     
+                            <div class="about-content text-left" style="float:center;">
+                                <h4>Hi, I’m Joanna Lam, Artist from San Diego.</h4>
+                                <p > Studying Speculative Design and Computer Science at the University of California, San Diego, I am passionate about combining the arts and technology by experimenting with virtual reality and 3D animation. Speculative Design critiques anthropocentric ways of things that could be possible futures. This relates to my interests in the computing aspects of human and technological interaction.
+                                </p>
+                                <p> My current project focuses on transforming animation to become more factual and informative like documentaries. My overall vision is to document wildlife, specifically alligators and crocodiles, through the perspective lens of interactive animation in order to educate more people about them.</p>
+                    
+                            </div>
+                     
+                         </div>
+             </div>            
+                    </div> 
+                </div>	
+            </div>     
+       </section>
+
+
+    <!-- Callout -->
+    <aside class="callout">
+      <div class="text-vertical-center">
+        <h1>Combining Art and Technology</h1>
+      </div>
+    </aside>
+
+
+    <!-- Services -->
+    <section id="services" class="services bg-primary text-white">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-lg-12 mx-auto">
+            <h2>My Projects</h2>
+            <hr class="small">
+            <div class="row">
+      
+
+
+
+ <!-- Page Heading -->
+   <!--   <h1 class="my-4">Page Heading
+        <small>Secondary Text</small>
+      </h1> -->
+
+      <div class="row">
+     
+<!-- <div style="display: none;" id="hiddenText">This is hidden</div>
+<a href="#" onclick="document.getElementById('hiddenText').style.display="block"; return false;">Click here to show hidden text</a>
+-->
+
+
+<div class="container">
+  <div class="row">
+
+<!-- Zoom -->
+   <div class="col-sm-6">
+   
+      <h2>Zoom!</h2>
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/197072731" ></iframe>
+  
+</div>
+  <div class="card-body" >
+    <div class="read-more">
+    <div class="item">
+      <div id="fade-content">
+
+          <p>Kids are able to build their own obstacles with paper blocks and race through or knock down their creations using Bluetooth controlled Arduino vehicles.
+            This toy is free-form, modular, and pairs nostalgia with contemporary hands-on gameplay.</p>
+        <!--   <p class="read-more"> 
+             <a href="#" class="button">Read More</a>
+                <span class="more_text">
+                 This is the extra text, that will be shown after pressing the link above.
+             </span> 
+             
+            </p> -->
+      </div>
+            <div>
+                  <a href="pdfs/147A Proposal.pdf" target="_blank" class="btn btn-dark2">Read the Proposal</a>
+            </div> 
+            </div>
+            </div>
+       
+    </div>
+
+</div>
+    <div class="col-sm-6">
+ 
+<!-- vitabot -->
+      <h2>Vitabot</h2>
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/210512119"></iframe>
+    </div>
+    <div class="card-body">
+      <div class="item">
+     <p>
+            The Vitabot is a portable and accessible bot that maintains and attends for the user. The Bot is specially crafted to ensure that users receive maximum amount of care, servitude, protection, and fun.
+                     This prototype can be used in various ways by everyone of all ages. Specifically, it targets children who do not know what to do in emergencies. The Bot will ultimately be able to scan a situation, detect if its an emergency, and 
+                     provide a solution to the problem. 
+            </p> 
+            <div>
+                   <a href="pdfs/vitabot.pdf" target="_blank" class="btn btn-dark2">See the Prototype</a>
+                </div>
+                </div>
+          </div>
+    </div>
+
+    <!--nightmare-->
+    <div class="col-sm-6">
+   
+      <h2>The Nightmare</h2>
+<div class="embed-responsive embed-responsive-16by9">
+  <!--  <iframe class="embed-responsive-item" src="https://vimeo.com/241476995"></iframe> -->
+    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/241476995" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    
+  
+</div>
+  <div class="card-body">
+    <div class="item">
+          <p>
+            <i>Henry Fuseli's The Nightmare</i> is a video game proposal based off Henry Fuseli's painting, <a href="https://en.wikipedia.org/wiki/The_Nightmare"target="_blank">The Nightmare</a>. This project features a young girl who suffers from sleep paralysis and nightmares. As a player, you, a college student and barista, suffer from sleep paralysis and experience the same nightmare every night. In the nightmare, you are being chased by demons and must surmount multiple obstacles and puzzles throughout the maze in order to escape.
+                  This game provides many plot twists and challenges in gameplay. <i>Henry Fuseli's The Nightmare</i> dives into the research and understanding of sleep paralysis and the conditions patients undergo when they experience it.
+            </p> 
+         
+            <div>
+                  <a href="pdfs/NIGHTMARE.pdf" target="_blank" class="btn btn-dark2" >Read the Proposal</a>
+                </div>
+                </div>
+      </div>
+    </div>
+
+
+<!-- island -->
+       <div class="col-sm-6">
+   
+      <h2>The Island and the Island</h2>
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/244276575"></iframe>
+  
+</div>
+  <div class="card-body">
+    <div class="item">
+          <p>Made with Unity, this abstract game focuses on challenging normal video game environments through the jaws of an alligator. This game incorporates the landscape as the game and challenges the limitations of player movement and assessment of the land. The space is itself a time fold in which overlapping identical areas can be changed by unique individual factors, of which spark separate chain reactions that evolve the entire space. Inspired by China Mieville's novel <i>The City and The City</i>, this game forces players to reconsider virtual space and question the boundaries in video games. Play the game or read more <a target="_blank" href="pdfs/Island.pdf">here</a>.</p>
+          <div>
+                  <a href="videogame/TheIslandandTheIsland.exe" target="_blank" class="btn btn-dark2">Download the Game</a>
+            </div>
+      </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+
+
+  
+      </div> 
+
+
+            </div>
+            <!-- /.row (nested) -->
+          </div>
+          <!-- /.col-lg-10 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+
+<!-- callout original here -->
+
+
+
+<!-- 3D -->
+    <section id="dim" class="dim">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto text-center">
+            <h2>3D Modeling</h2>
+                  <h4> Blender </h4>
+                <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
+            <hr class="small">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="3d-item">
+                    <img class="img-portfolio2 img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/babybaymax.png?raw=true" >
+                    <div class="image-hover"> </div>
+                </div>
+              </div>
+             
+              <div class="col-md-6">
+                <div class="3d-item">
+                    <img class="img-portfolio2 img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gamecontrol.png?raw=true">
+                </div>
+              </div>
+
+</div>
+
+              <!-- uncomment when there's more to show -->
+             <!--  <div class ="col-lg-12 col-md-6">
+                <a href="grid/graphicdesign.html" target = "_blank" class="btn btn-lg btn-dark3">See more</a> 
+                </div> -->
+              
+          
+
+            </div>
+            <!-- /.row (nested) -->
+           <!-- <a href="C:\Users\joann\Desktop\Website_bootstrap\grid\grid.html"  target="_blank" class="btn btn-dark">View More Items</a> -->
+          </div>
+          <!-- /.col-lg-10 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+
+
+
+
+ <!-- Graphics -->
+    <section id="graphics" class="graphics">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto text-center">
+          <!--  <a href="grid/graphicdesign.html" target="_blank"> -->
+            <h2>Graphic Design</h2>
+            <h4> Adobe Creative Suite </h4>
+                <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
+            <hr class="small">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="graphic-item">
+               <!--   <a href="C:\Users\joann\Desktop\Website_bootstrap\img\gd\CGUnderwaterGator.png" > -->
+                 
+                  <a href="grid/graphicdesign.html" target="_blank">
+                    <img class="img-portfolio img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/bluebay.png?raw=true" > <!--img\gd\3GO.png"> -->
+                   <!--  <a href="grid/graphicdesign.html" target = "_blank" class="btn btn-lg btn-dark">Advertisement/Marketing</a> -->
+                  </a>
+                </div>
+              </div>
+             
+              <div class="col-md-6">
+                <div class="graphic-item">
+          <!--        <a href="C:\Users\joann\Desktop\Website_bootstrap\grid\grid_mammals.html" target="_blank"> -->
+                       <a href="grid/graphicdesign.html" target="_blank">
+                    <img class="img-portfolio img-fluid" src="img\gd\lowpoly.png">
+                    <!-- <a href="grid/graphicdesign.html" target = "_blank" class="btn btn-lg btn-dark">Illustrations</a> -->
+                  </a>
+                </div>
+              </div>
+
+
+               <div class ="col-lg-12 col-md-6">
+                <a href="grid/graphicdesign.html" target = "_blank" class="btn btn-lg btn-dark3">See more</a> 
+                </div>
+              
+          </div>
+            </div>
+            <!-- /.row (nested) -->
+           <!-- <a href="C:\Users\joann\Desktop\Website_bootstrap\grid\grid.html"  target="_blank" class="btn btn-dark">View More Items</a> -->
+          </div>
+          <!-- /.col-lg-10 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+
+
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto text-center">
+            <h2>Photography</h2>
+            <h4>Albums</h4>
+                <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
+            <hr class="small">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="project-item">
+                  <a href="grid\grid.html" target="_blank">
+                    <img class="img-portfolio img-fluid" src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/butt.JPG">
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="portfolio-item">
+                  <a href="grid/grid_mammals.html" target="_blank">
+                    <img class="img-portfolio img-fluid" src="img/mane.jpg">
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="portfolio-item">
+                  <a href="grid/grid_floral.html" target="_blank">
+                    <img class="img-portfolio img-fluid" src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/flower.JPG">
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="portfolio-item">
+                  <a href="grid/grid.html" target="_blank">
+                    <img class="img-portfolio img-fluid" src="https://raw.githubusercontent.com/jwlam21/jwlam21.github.io/master/img/florida.JPG">
+                  </a>
+                </div>
+              </div>
+         </div>
+            </div>
+            <!-- /.row (nested) -->
+           <!-- <a href="C:\Users\joann\Desktop\Website_bootstrap\grid\grid.html"  target="_blank" class="btn btn-dark">View More Items</a> -->
+          </div>
+          <!-- /.col-lg-10 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+
+
+
+
+
+<!-- 2D -->
+ <!--   <section id="2dim" class="2dim">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto text-center">
+            <h2>2D Artwork</h2>
+
+                <div class oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
+            <hr class="small">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="2d-item">
+                    <img class="img-portfolio3 img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/Charmander_on_ice.png?raw=true" height="300px">
+                    <div class="image-hover"> </div>
+                </div>
+              </div>
+             
+              <div class="col-md-6">
+                <div class="2d-item">
+                    <img class="img-portfolio3 img-fluid" src="https://github.com/jwlam21/jwlam21.github.io/blob/master/img/Richard.jpg?raw=true">
+                </div>
+              </div>
+
+</div> -->
+
+              <!-- uncomment when there's more to show -->
+             <!--  <div class ="col-lg-12 col-md-6">
+                <a href="grid/graphicdesign.html" target = "_blank" class="btn btn-lg btn-dark3">See more</a> 
+                </div> -->
+              
+          
+
+ <!--           </div>
+           
+           
+          </div>
+   
+        </div>
+   
+      </div>
+  
+    </section> -->
+
+
+
+
+
+
+
+
+
+    <!-- Call to Action -->
+  <!--  <aside class="call-to-action bg-primary text-white">
+      <div class="container text-center">
+        <h3>Questions?</h3>
+        <a href="#" class="btn btn-lg btn-light">Email me!</a>
+        <a href="#" class="btn btn-lg btn-dark">Send me a note!</a>
+      </div>
+    </aside> -->
+
+    <!-- Map -->
+<!--   <section id="contact" class="map">
+
+     <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6701.3540953319625!2d-117.2362999!3d32.8802632!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc06c4414caf4f%3A0xefb6aafc89913ea7!2sUniversity+of+California+San+Diego!5e0!3m2!1sen!2sus!4v1507889176373" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <br/>
+      <small>
+        <a href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6701.3540953319625!2d-117.2362999!3d32.8802632!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc06c4414caf4f%3A0xefb6aafc89913ea7!2sUniversity+of+California+San+Diego!5e0!3m2!1sen!2sus!4v1507889176373"></a>
+      </small>
+    </section>  -->
+
+
+<section id="contact">
+
+    <!-- Footer --> 
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto text-center">
+            <h4>
+              <strong>Joanna Lam</strong>
+            </h4>
+            <p>University of California, San Diego
+              <br>B.A., Speculative Design</p>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fa fa-phone fa-fw"></i>
+                (510) 996-8470</li>
+              <li>
+                <i class="fa fa-envelope-o fa-fw"></i>
+                <a href="mailto:name@example.com">jwlam@ucsd.edu</a>
+              </li>
+            </ul>
+            <br>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/joanna.lam.792" target="_blank">
+                  <i class="fa fa-facebook fa-fw fa-3x"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/jojolam21/"target="_blank">
+                  <i class="fa fa-instagram fa-fw fa-3x"></i>
+                </a>
+              </li> 
+             <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/joanna-lam-a34957138/"target="_blank">
+                  <i class="fa fa-linkedin fa-fw fa-3x"></i>
+                </a>
+              </li> 
+            </ul>
+            <hr class="small">
+            <p >Copyright &copy; Joanna Lam 2017</p>
+          </div>
+        </div>
+      </div>
+      <a id="to-top" href="#top" class="btn btn-dark btn-lg js-scroll-trigger">
+        <i class="fa fa-chevron-up fa-fw fa-1x"></i>
+      </a>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.js"></script>
+
+    </section>
+
+  </body>
+
+</html>
