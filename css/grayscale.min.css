@@ -845,10 +845,15 @@ opener {
       opacity: 0;
       margin-top: 0px;
       margin-bottom: 5px;
-      background-color: black; }
+      background-color: black; 
+      position: absolute !important;
+      display: block !important;
+      }
       .photos .portfolio-item .portfolio-item-caption:hover {
         opacity: .8; }
       .photos .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
+        padding-top: 30px;
+        margin-top: 30px;
         font-size: 1.5rem; }
   @media (min-width: 576px) {
     .photos {
@@ -911,12 +916,16 @@ opener {
       -moz-transition: all ease 0.5s;
       transition: all ease 0.5s;
       opacity: 0;
+      display: block !important;
       margin-top: 0px;
       margin-bottom: 5px;
-      background-color: black; }
+      background-color: black; 
+      position: absolute !important;
+      }
       .dim .portfolio-item .portfolio-item-caption:hover {
         opacity: .8; }
       .dim .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
+          padding-top: 10px;
         font-size: 1.5rem; }
   @media (min-width: 576px) {
     .dim {
@@ -954,10 +963,14 @@ opener {
       left: 0px;
       margin-top: 0px;
       margin-bottom: 5px;
-      background-color: black; }
+      background-color: black;
+      display: block !important;
+      position: absolute !important;
+       }
       .graphic .portfolio-item .portfolio-item-caption:hover {
         opacity: .8; }
       .graphic .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
+          padding-top: 20px;
         font-size: 1.5rem; }
   @media (min-width: 576px) {
     .graphic {
@@ -965,7 +978,6 @@ opener {
       .graphic .portfolio-item {
         margin-top: 0px;
         margin-bottom: 30px; } }
-
 
 
 /*read more */
