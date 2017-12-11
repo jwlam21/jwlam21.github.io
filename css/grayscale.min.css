@@ -747,19 +747,39 @@ opener {
 
 
   .portfolio .portfolio-item {
-    position: relative;
-    display: inline-block;
+    position: relative; 
+    display: block !important;
     max-width: 25rem;
     margin-bottom: 15px; }
     .portfolio .portfolio-item .portfolio-item-caption {
       -webkit-transition: all ease 0.5s;
       -moz-transition: all ease 0.5s;
       transition: all ease 0.5s;
+      display: block !important;
       opacity: 0;
-      background-color: black; }
-.portfolio .portfolio-item img {
+      margin-top: 40px;
+      background-color: black;
+      position: absolute !important;
+       }
+/*.portfolio .portfolio-item img {
     position: relative;
+    display: block;
+} */
+
+/*.portfolio .portfolio-item img:hover {
+    opacity: 0.8;
+    color: black;
 }
+.portfolio .portfolio-item img:hover .text-display {
+    display: inline-block;
+    position: absolute;
+    height: 30px;
+}
+.text-display {
+    background: blue;
+    color: purple;
+    height: 30px;
+} */
 
       .portfolio .portfolio-item .portfolio-item-caption:hover {
         opacity: .8; }
