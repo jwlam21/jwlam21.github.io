@@ -989,7 +989,7 @@ opener {
       .anim .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
           padding-top: 10px;
         font-size: 1.5rem; }
-  @media (min-width: 576px) {
+  @media (min-width: 576px) { /*when the screen has a minimum size of 576 pixels (big screen) then this*/
     .anim {
       margin-bottom: -30px; }
       .anim .portfolio-item {
