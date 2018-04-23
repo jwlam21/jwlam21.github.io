@@ -288,6 +288,7 @@ a:focus,a:hover{
     }
 .masthead .intro-body .intro-text{
     font-size:30px;
+     animation: float 1.7s ease-in-out normal;
     }
 @media (min-width:768px){.masthead{
     height:100%;
@@ -334,6 +335,7 @@ a:focus,a:hover{
     padding-bottom: 70px;
      font-family: 'Muli', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
      display: block;
+    
 }
 /* About */
 
@@ -386,7 +388,7 @@ textblockright {
   margin-left: 0px;
 }
 .about-content{
-    padding-top: 0px;
+    padding-top: 50px;
     margin-top:0px; 
    /* margin-left: 15cm; */
     margin-left: 0cm;
@@ -416,6 +418,17 @@ textblockright {
     font-size: 15px;
 }
 
+@keyframes float {
+	0% {
+        opacity: 0;
+		transform: translatey(-30px);
+	}
+	100% {
+        opacity: 1;
+		transform: translatey(0px);
+	}
+}
+
 .box {
     display: block;
     background: black;
@@ -424,8 +437,9 @@ textblockright {
     padding-right: 0px;
     width: 100%;
     margin-bottom: 0px;
-    margin-left: 0px;
+    margin-left: 420px;
     height: 400px;
+    animation: float 1.7s ease-in-out normal;
 } 
 
 
@@ -446,7 +460,8 @@ textblockright {
     display: table;
     height: 400px;
     width: 100%;
-    background:url(../img/water.jpg) no-repeat center center scroll;
+    background:url(../img/water.jpg) no-repeat center center scroll; 
+    
     background-color:#000;
     -webkit-background-size:cover;
     -moz-background-size:cover;
