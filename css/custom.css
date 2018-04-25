@@ -1,0 +1,62 @@
+#bg {
+    background: white url(img/back.png) no-repeat top center;
+    height: 430px;
+    margin-top: 0px;
+}
+#scene {
+    width: 107%;
+    overflow: hidden;
+    position: center;
+    right: 50px;
+}
+
+#back {
+    position: absolute;
+}
+
+#city {
+    position: absolute;
+}
+
+#text {
+    position: absolute;
+}
+#indy {
+    width: 40%;
+    margin-right: 300;
+    margin-top: 160px;
+    position: absolute;
+}
+#steg {
+    width: 50%;
+    margin-left: 440px;
+    margin-top: 200px;
+    position: absolute;
+}
+#front {
+    width: 40%;
+    margin-left: 1060;
+    margin-top: 200px;
+    position: absolute;
+}
+#mid {
+    width: 50%;
+    margin-left: 1050;
+    margin-top: 130px;
+    position: absolute;
+}
+#hind {
+    width: 40%;
+    margin-left: 1000;
+    margin-top: 200px;
+    position: absolute;
+}
+#leaf {
+    position: absolute;
+}
+#flowers {
+    position: absolute;
+}
+#cir {
+    position: absolute;
+}
