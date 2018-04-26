@@ -76,25 +76,10 @@ a:focus,a:hover{
 
 }
 
- /*.download2 {
-    height: 400px;
-    display: block;
-}
-.download2-section{
-    color:#fff;
-    display: table;
-    height: 400px;
-    width: 100%;
-    background:url(https://github.com/jwlam21/jwlam21.github.io/blob/master/dinosaur.html) no-repeat center center scroll; 
-    
-    background-color:#000;
-    -webkit-background-size:cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
-    background-size:cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    } */
+
+/*@media only screen and (max-width:767px){#iframe{
+    padding-bottom: 100%;
+}  */
 
 
 /*Nav bar*/
@@ -719,6 +704,7 @@ footer i {
 footer a {
     color: lightskyblue;
 }
+
 
 
 
