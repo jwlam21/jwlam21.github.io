@@ -290,6 +290,8 @@ a:focus,a:hover{
     transition: top 0.2s ease-in-out;
     top: 0;
 } */
+
+
 .masthead{
     display:table;
     width:100%;
@@ -298,7 +300,9 @@ a:focus,a:hover{
     position: relative;
     text-align:center;
     color:#fff;
-    background:url(https://github.com/jwlam21/jwlam21.github.io/blob/master/img/gd/lowpoly_black.png?raw=true) no-repeat center center scroll;
+    background:url(https://github.com/jwlam21/jwlam21.github.io/blob/master/img/warren.jpg?raw=true) repeat-x center center scroll; 
+    background-size: 100% !important; 
+    animation: slide 60s linear infinite !important; 
     background-color:#000;
     -webkit-background-size:cover;
     background-attachment: fixed;
@@ -310,6 +314,8 @@ a:focus,a:hover{
     -o-background-size:cover;
     background-size:cover
     }
+
+
 .masthead .intro-body{
     display:table-cell;
     vertical-align:middle;
