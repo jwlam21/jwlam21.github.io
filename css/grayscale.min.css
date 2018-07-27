@@ -1023,7 +1023,8 @@ opener {
     margin-left: auto !important;
     margin-right: auto !important;
     /*left: 340px;*/
-    left: 60px;
+    /*left controls how much space is on the left for the icons*/
+    left: 30px;
      }
 
     .anim .portfolio-item .portfolio-item-caption {
@@ -1048,7 +1049,8 @@ opener {
       .anim .portfolio-item {
         margin-top: 0px;
         margin-bottom: 30px;
-        left: 340px;
+        /*this left controls the clear black with the name*/
+        /*left: 340px;*/
          } 
         } 
 /*@media screen and (max-width: 480px) {
