@@ -300,7 +300,7 @@ a:focus,a:hover{
     position: relative;
     text-align:center;
     color:#fff;
-    background:url(https://github.com/jwlam21/jwlam21.github.io/blob/master/img/warren.jpg?raw=true) repeat-x center center scroll; 
+    background:url(https://github.com/jwlam21/jwlam21.github.io/blob/master/img/warren.jpg?raw=true) repeat-x center center scroll ; 
     background-size: 100% !important; 
     animation: slide 60s linear infinite !important; 
     background-color:#000;
@@ -1219,7 +1219,7 @@ opener {
     .illus {
       margin-bottom: -30px; }
       .illus .portfolio-item {
-        left: 170px;
+        left: 0px;
         margin-top: 0px;
         margin-bottom: 30px; } }
 
