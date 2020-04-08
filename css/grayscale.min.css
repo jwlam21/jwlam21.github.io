@@ -14,7 +14,7 @@
          height:100%}
 h1,h2,h3,h4,h5{
     font-family:'Muli', 'Cabin','Helvetica Neue',Helvetica,Arial,sans-serif;
-    font-weight:700;
+    font-weight:700;l
     margin:0 0 35px;
     letter-spacing:1px;
     text-transform:none;}
@@ -31,7 +31,53 @@ p{
     line-height:1.5;
     margin:0 0 25px
     }
-@media (min-width:768px){p{font-size:18px;line-height:1.6;margin:0 0 35px}}
+.section-padding {
+  padding: 70px 0!important;
+}
+
+.section-head {
+  margin-bottom: 80px;
+}
+.section-head h6 {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 1px;
+  display: inline-block;
+  padding: 0 15px;
+  position: relative;
+}
+.section-head h6:before, .section-head h6:after {
+  content: '';
+  width: 50px;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  bottom: 3px;
+}
+.section-head h6:before {
+  left: -50px;
+}
+.section-head h6:after {
+  right: -50px;
+}
+.section-head h4 {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  line-height: .7;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+
+@media (min-width:768px){ /* small screen TABLET */
+p{
+	font-size:18px;
+	line-height:1.6;
+	margin:0 0 35px}}
 a{
     -webkit-transition:all .2s ease-in-out;
     -moz-transition:all .2s ease-in-out;
@@ -49,7 +95,7 @@ a:focus,a:hover{
 .photo-item {
     margin-bottom: 30px;
 }
-
+/* Parallax */
 .iframe {
     overflow: hidden;
     background: black;
@@ -58,13 +104,13 @@ a:focus,a:hover{
     position: absolute; 
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+	width:100%!important;
 }
 .parallax {
     overflow: hidden;
     position: relative;
-    height: 0;
+    /*height: 0; */
+	width:100%!important;
     border: 0px transparent black;
     background: black;
     padding-bottom: 40%;
@@ -73,13 +119,13 @@ a:focus,a:hover{
 .parallax iframe {
     border: 0px transparent black;
     position: absolute;
+	width:100%!important;
 
 }
-
-/* Tablet View */
+/* Bigger Tablet View */
 @media screen and (min-width: 992px) {
 	
-	.iframe {
+	iframe {
 		width: 100%;
 		border: 0px transparent black;
    		display: inline-block;
@@ -101,7 +147,7 @@ a:focus,a:hover{
 /* Phone View */
 @media screen and (min-width: 228px) {
 	
-	.iframe {
+	iframe {
 		width: 100%;
 		border: 0px transparent black;
    		display: inline-block;
@@ -118,6 +164,7 @@ a:focus,a:hover{
 		position: absolute;
 		width: 100%;
 	} 
+
 	
 }
 
@@ -345,7 +392,7 @@ a:focus,a:hover{
     position: relative;
     text-align:center;
     color:#fff;
-    background:url(https://github.com/jwlam21/jwlam21.github.io/blob/master/img/warren.jpg?raw=true) repeat-x center center scroll ; 
+    background:url(https://github.com/jwlam21/jwlam21.github.io/blob/master/img/warren.jpg?raw=true) repeat-x center center scroll; 
     background-size: 100% !important; 
     animation: slide 60s linear infinite !important; 
     background-color:#000;
@@ -372,7 +419,7 @@ a:focus,a:hover{
     font-size:30px;
      animation: float 1.7s ease-in-out normal;
     }
-@media (min-width:768px){.masthead{
+@media (min-width:768px){.masthead{				/* DESKTOP */
     height:100%;
     padding:0;
     }
@@ -412,26 +459,48 @@ a:focus,a:hover{
 .about {
     height: 600px;
      padding-top: 90px;
-    position: relative;
-    overflow: hidden;
+    position: relative!important;
     padding-bottom: 70px;
      font-family: 'Muli', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-     display: block;
-    
+     display:block;
 }
-/* About */
-
-
-
 .about-image {
-    float: left;
+    float: left; 
     margin-right: 20px;
     padding-right: 20px;
     padding-bottom: 30px;
     display: block;
 }
+/* About End */
 
 
+/* Parallax */
+.iframe {
+    overflow: hidden;
+    background: black;
+    border: 0px transparent black;
+    display: inline-block;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.parallax {
+    overflow: hidden;
+    position: relative;
+    height: 0;
+	width:100%;
+    border: 0px transparent black;
+    background: black;
+    padding-bottom: 40%;
+}
+
+.parallax iframe {
+    border: 0px transparent black;
+    position: absolute;
+
+}
 imgblockleft {
     display: inline-block;
     float: left;
@@ -452,7 +521,7 @@ textblockright {
 .circular--portrait {
   /*position: relative;*/
   display: inline-block;
-  float: left;
+  /*float: left; */.
   margin-left: 0px;
   padding-left: 0px;
   width: 400px;
@@ -469,20 +538,63 @@ textblockright {
   padding-left: 0px;
   margin-left: 0px;
 }
+
 .about-content{
-    padding-top: 50px;
-    margin-top:0px; 
-   /* margin-left: 15cm; */
-    margin-left: 0cm;
-    margin-bottom: 10px;
+    padding-top: 0px;
+	width:90%!important;
+    margin:0px; 
+	display:inline-block!important;
     align-content: center;
-    padding-bottom: 0px;
-    padding-left: 10px;
-    padding-right: 30px;
-    margin-right: 30px;
     float: center !important; 
-    display: block;
-     font-family: 'Muli', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Muli', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@media screen and (min-width: 228) {					/* MOBILE */
+	.masthead {
+    background:url(https://github.com/jwlam21/jwlam21.github.io/blob/master/img/warren.jpg?raw=true) repeat-x center center scroll; 
+    background-size: 150% !important; 
+    animation: slide 60s linear infinite !important; 
+    background-color:#000;
+    -webkit-background-size:cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    transition: top 0.2s ease-in-out;
+    top: 0;
+    text-transform: none;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    }
+	.about-content text-left {
+		width: 50%;
+		align-content: center;
+		text-align: center;
+		float: center;
+		display: block;
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+		margin-top: 5px;
+		padding-top: 10px;
+	}
+	.about {
+		height:auto;
+		padding-top:50px;
+		position:relative;
+		padding-bottom:50px;
+		font-family: 'Muli', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		display:block;
+	}
+
+	p {
+		font-size: 9px;
+	}
+	.about-image {
+		width: 60%;
+	}
+	
+	.circular--portrait {
+		width: 60%;
+	}
+
 }
 .about-content h2{
     font-size:22px;
@@ -512,7 +624,7 @@ textblockright {
 }
 
 .box {
-    display: block;
+    display: block!important;
     background: black;
     color: white;
     margin-right: 0px;
@@ -522,6 +634,8 @@ textblockright {
     margin-left: 420px;
     height: 400px;
     animation: float 1.7s ease-in-out normal;
+	text-align:center!important;
+	align-content:center!important;
 } 
 
 
@@ -707,7 +821,7 @@ textblockright {
 #map{
     width:100%;
     height:300px}
-@media (min-width:992px){
+@media (min-width:992px){							/* DESKTOP WIDER 992*/
     .content-section{
         padding-top:90px;
         padding-bottom:90px}
@@ -841,7 +955,8 @@ opener {
   margin-bottom: -15px;
   font-family: 'Muli', 'Helvetica';
   color: black;
-  height: 780px;
+  height: auto;
+	overflow:hidden!important;
     }
 
 
@@ -885,7 +1000,7 @@ opener {
    
       .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
         font-size: 1.5rem; }
-  @media (min-width: 576px) {
+  @media (min-width: 576px) { 						/* TABLET SIZE 576*/
     .portfolio {
       margin-bottom: -30px; }
       .portfolio carousel {
@@ -912,16 +1027,29 @@ opener {
       line-height: 38px; }
   .portfolio-modal .portfolio-modal-dialog h2 {
     font-size: 2rem; }
+	.about {
+		height:auto;
+		position: relative!important;
+		font-family: 'Muli', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		display:block;
+		text-align:center!important;
+	}
 
-@media (min-width: 768px) {
+@media (min-width: 768px) {						/* WIDER TABLET 768*/
   .portfolio-modal .portfolio-modal-dialog {
     min-height: 100vh;
     padding: 5rem;
     margin: 3rem calc(3rem - 8px); }
     .portfolio-modal .portfolio-modal-dialog h2 {
       font-size: 3rem; } }
-
-
+.about {
+    height: auto;
+     padding-top: 90px;
+    position: relative!important;
+    padding-bottom: 70px;
+     font-family: 'Muli', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+     display:block;
+	}
 
 .photos {
   margin-top: 70px;
@@ -995,8 +1123,6 @@ opener {
 
 /*3d modeling */
 .dim {
-  margin-top: 70px;
-  margin-bottom: 50px;
   font-family: 'Muli', 'Helvetica';
   color: white;
   align-items: center;
@@ -1006,7 +1132,7 @@ opener {
         margin-left: 0px;
     }
 
-  .dim .portfolio-item {
+ .portfolio-item {
     position: relative;
     display: block;
     max-width: 25rem;
@@ -1043,8 +1169,6 @@ opener {
 
 /*Animation */
 .anim {
-  margin-top: 70px;
-  margin-bottom: 50px;
   font-family: 'Muli', 'Helvetica';
   color: white;
   align-items: center;
