@@ -9,6 +9,10 @@
      height:100%;
      color:#fff;
      background-color:#000}
+img-fluid {
+	align-content: center!important;
+	vertical-align: middle!important;
+}
      html{
          width:100%;
          height:100%}
@@ -33,6 +37,7 @@ p{
     }
 .section-padding {
   padding: 70px 0!important;
+	align-content:center!important;
 }
 .section-head {
   margin-bottom: 80px;
@@ -950,7 +955,7 @@ body{-webkit-tap-highlight-color:rgba(255,255,255,.2)} */
     display: block; }
 
 container {
-    align:right;}
+    align:center;}
 opener {
     align:left;}
 
@@ -1131,10 +1136,14 @@ opener {
   font-family: 'Muli', 'Helvetica';
   color: white;
   align-items: center;
+	align-content:center!important;
     }
 
     .dim .portfolio-item img {
         margin-left: 0px;
+		align-content:center!important;
+		vertical-align: middle!important;
+		float:center;
     }
 
  .portfolio-item {
@@ -1182,7 +1191,7 @@ opener {
     .anim .portfolio-item img {
         margin-left: auto;
         margin-right: auto;
-        size: %100;
+        size: 100%;
     }
 
 .anim h4 {
@@ -1191,15 +1200,17 @@ opener {
   .anim .portfolio-item {
     position: relative;
     display: block;
-    max-width: 25rem;
+    max-width: 40rem;
     margin-bottom: 30px;
     margin-top: 0px !important;
     align-items: center;
+	  vertical-align:middle!important;
     margin-left: auto !important;
     margin-right: auto !important;
     /*left: 340px;*/
     /*left controls how much space is on the left for the icons*/
-    left: 30px;
+    left: 0px;
+
      }
 
     .anim .portfolio-item .portfolio-item-caption {
@@ -1245,8 +1256,8 @@ opener {
 
 /*graphic*/
 .graphic {
-  margin-top: 70px;
-  margin-bottom: 50px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   font-family: 'Muli', 'Helvetica';
   color: white;
     }
