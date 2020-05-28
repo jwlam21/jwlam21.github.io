@@ -17,13 +17,13 @@ img-fluid {
          width:100%;
          height:100%}
 h1,h2,h3,h4,h5{
-    font-family:'Muli', 'Cabin','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-family:'Muli', 'Cabin','Helvetica Neue','Helvetica','Arial',sans-serif;
     font-weight:700;
     margin:0 0 35px;
     letter-spacing:1px;
     text-transform:none;}
 h6 {
-     font-family:'Muli', 'Cabin','Helvetica Neue',Helvetica,Arial,sans-serif;
+     font-family:'Muli', 'Cabin','Helvetica Neue','Helvetica','Arial',sans-serif;
     font-weight:700;
     margin:0 0 10px;
     letter-spacing:1px;
@@ -403,7 +403,7 @@ a:focus,a:hover{
     text-align:center;
     color:#fff;
     background:url(https://github.com/jwlam21/jwlam21.github.io/blob/master/img/warren.jpg?raw=true) repeat-x center center scroll; 
-    background-size: 100% !important; 
+   /* background-size: 100% !important; */
     animation: slide 60s linear infinite !important; 
     background-color:#000;
     -webkit-background-size:cover;
@@ -414,7 +414,7 @@ a:focus,a:hover{
     text-transform: none;
     -moz-background-size:cover;
     -o-background-size:cover;
-    background-size:cover
+    background-size:cover;
     }
 
 
@@ -531,7 +531,7 @@ textblockright {
 .circular--portrait {
   /*position: relative;*/
   display: inline-block;
-  /*float: left; */.
+  /*float: left; */
   margin-left: 0px;
   padding-left: 0px;
   width: 400px;
@@ -561,8 +561,8 @@ textblockright {
 
 @media screen and (min-width: 228) {					/* MOBILE */
 	.masthead {
-    background:url(https://github.com/jwlam21/jwlam21.github.io/blob/master/img/warren.jpg?raw=true) repeat-x center center scroll; 
-    background-size: 150% !important; 
+    background:url(https://github.com/jwlam21/jwlam21.github.io/blob/master/img/warren.jpg?raw=true) repeat-x center center scroll!important; 
+    background-size: cover; 
     animation: slide 60s linear infinite !important; 
     background-color:#000;
     -webkit-background-size:cover;
@@ -1129,6 +1129,54 @@ opener {
     margin: 3rem calc(3rem - 8px); }
     .portfolio-modal .portfolio-modal-dialog h2 {
       font-size: 3rem; } }
+/*disney */
+.disney {
+  font-family: 'Muli', 'Helvetica';
+  color: white;
+  align-items: center;
+	align-content:center!important;
+    }
+
+    .disney .portfolio-item img {
+        margin-left: 0px;
+		align-content:center!important;
+		vertical-align: middle!important;
+		float:center;
+    }
+
+ .portfolio-item {
+    position: relative;
+    display: block;
+    max-width: 25rem;
+    margin-bottom: 30px;
+    margin-top: 0px !important;
+    align-items: center;
+     }
+    .disney .portfolio-item .portfolio-item-caption { /*black overlay*/
+      -webkit-transition: all ease 0.5s;
+      -moz-transition: all ease 0.5s;
+      transition: all ease 0.5s;
+      opacity: 0;
+      display: block !important;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-color: black; 
+      position: absolute !important;
+      }
+      .disney h4 {
+          margin-top: 20px;
+      }
+      .disney .portfolio-item .portfolio-item-caption:hover {
+        opacity: .8; }
+      .disney .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
+          padding-top: 6px;
+        font-size: 1.5rem; }
+  @media (min-width: 576px) {
+    .disney {
+      margin-bottom: -30px; }
+      .disney .portfolio-item {
+        margin-top: 10px;
+        margin-bottom: 30px; } }
 
 
 /*3d modeling */
