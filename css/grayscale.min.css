@@ -433,6 +433,13 @@ a:focus,a:hover{
     height:100%;
     padding:0;
     }
+.disneyad {
+	display:block!important;
+	width:100%!important;
+	max-width:620px!important;
+	align-content:center!important;
+	align-items: center!important;
+}
 .masthead .intro-body .brand-heading{font-size:100px}
 .masthead .intro-body .intro-text{
     font-size:40px;
